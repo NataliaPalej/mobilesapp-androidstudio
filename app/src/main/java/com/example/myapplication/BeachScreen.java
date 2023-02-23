@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +10,8 @@ import android.widget.Button;
 import android.widget.RadioButton;
 
 public class BeachScreen extends AppCompatActivity {
+
+    private ConstraintLayout cons_layout;
 
     //Back button
     private Button btn;
@@ -33,5 +36,44 @@ public class BeachScreen extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        cons_layout = findViewById(R.id.cons_layout);
+
+        // First Radio Button Caldera Beach
+        radio1 = findViewById(R.id.radio1);
+        radio1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cons_layout.setBackgroundResource(R.drawable.calderabeach);
+            }
+        });
+
+        // Second Radio Button Eros Beach
+        radio2 = findViewById(R.id.radio2);
+        radio2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cons_layout.setBackgroundResource(R.drawable.erosbeach);
+            }
+        });
+
+        // Third Radio Button Red Beach
+        radio3 = findViewById(R.id.radio3);
+        radio3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cons_layout.setBackgroundResource(R.drawable.erosbeach);
+            }
+        });
+
+        // Forth Radio Button Red Beach
+        radio4 = findViewById(R.id.radio4);
+        radio4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cons_layout.setBackgroundResource(R.drawable.redbeach);
+            }
+        });
+
     }
 }
