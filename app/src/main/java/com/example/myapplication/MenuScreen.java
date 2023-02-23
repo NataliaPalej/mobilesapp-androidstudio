@@ -13,6 +13,7 @@ public class MenuScreen extends AppCompatActivity {
     private Button beachScreen;
     private Button hotelScreen;
     private Button transportScreen;
+    private Button exit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +57,16 @@ public class MenuScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(MenuScreen.this, BeachScreen.class);
                 startActivity(i);
+            }
+        });
+
+        // Exit the App
+        exit = findViewById(R.id.btn5);
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                System.exit(0);
             }
         });
 
