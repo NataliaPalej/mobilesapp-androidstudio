@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Go to next screen after 2000ms
         Thread splashTread = new Thread() {
             public void run() {
                 try {
