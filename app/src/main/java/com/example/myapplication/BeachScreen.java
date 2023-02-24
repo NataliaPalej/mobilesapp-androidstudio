@@ -27,16 +27,6 @@ public class BeachScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beach_screen);
 
-        // Go to MenuScreen
-        btn = findViewById(R.id.btn);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(BeachScreen.this, MenuScreen.class);
-                startActivity(i);
-            }
-        });
-
         cons_layout = findViewById(R.id.cons_layout);
 
         // First Radio Button Caldera Beach
@@ -62,7 +52,7 @@ public class BeachScreen extends AppCompatActivity {
         radio3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                cons_layout.setBackgroundResource(R.drawable.erosbeach);
+                cons_layout.setBackgroundResource(R.drawable.redbeach);
             }
         });
 
@@ -71,7 +61,17 @@ public class BeachScreen extends AppCompatActivity {
         radio4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                cons_layout.setBackgroundResource(R.drawable.redbeach);
+                cons_layout.setBackgroundResource(R.drawable.whitebeach);
+            }
+        });
+
+        // Back Button
+        btn = findViewById(R.id.btn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(BeachScreen.this, MenuScreen.class);
+                startActivity(i);
             }
         });
 
