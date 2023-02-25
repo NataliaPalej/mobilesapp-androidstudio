@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:alpha="0.9"
+    android:background="@drawable/oia"
     tools:context=".OiaScreen">
 
     <Button
@@ -19,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/backbtn2"
+        android:id="@+id/back2"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="60dp"
@@ -31,7 +32,7 @@
         app:srcCompat="@drawable/leftarrowblue" />
 
     <ImageView
-        android:id="@+id/nextbtn2"
+        android:id="@+id/next2"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginTop="484dp"
@@ -45,7 +46,87 @@
         android:id="@+id/imageView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/oialogo"
-        tools:layout_editor_absoluteX="68dp"
-        tools:layout_editor_absoluteY="50dp" />
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/oialogo" />
+
+    <ScrollView
+        android:layout_width="380dp"
+        android:layout_height="360dp"
+        android:layout_marginTop="100dp"
+        android:alpha="0.9"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="142dp"
+                android:text="@string/oia"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/hoteldelta"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                app:srcCompat="@drawable/hoteldelta" />
+
+            <Button
+                android:id="@+id/hoteldelta_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#2196F3"
+                android:text="BOOK ME" />
+
+            <ImageView
+                android:id="@+id/hotelpersa"
+                android:layout_width="match_parent"
+                android:layout_height="138dp"
+                app:srcCompat="@drawable/hotellapersa" />
+
+            <Button
+                android:id="@+id/hotelpersa_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#2196F3"
+                android:text="BOOK ME" />
+
+            <ImageView
+                android:id="@+id/hoteloiamare"
+                android:layout_width="match_parent"
+                android:layout_height="148dp"
+                app:srcCompat="@drawable/hoteloiamare" />
+
+            <Button
+                android:id="@+id/hoteloiamare_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#2196F3"
+                android:text="BOOK ME" />
+
+            <ImageView
+                android:id="@+id/hotelsecret"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                app:srcCompat="@drawable/hotelsecret" />
+
+            <Button
+                android:id="@+id/hotelsecret_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#2196F3"
+                android:text="BOOK ME" />
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
