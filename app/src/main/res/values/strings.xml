@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">My Application</string>
+
+    <string name="vulcano">
+ <b>Departure point:</b> Órmos Athiniós, Greece
+ <b>Start Time:</b> 10:00 AM<br />
+ <b>Santorini Volcano</b> <i>1h30min</i> - walk an ascending path to the crater of the still active volcano<br />
+ <b>Nea Kameni</b> <i>1h30min</i> - guided tour to the Lava islet of Nea Kameni<br />
+ <b>Palea Kameni </b><i>30min</i> - jump off the boat into warm thermal waters<br />
+ <b>Thirassia </b><i>1h30min</i> - visit village of Manolas on donkey or walk winding stairs<br />
+    </string>
 </resources>

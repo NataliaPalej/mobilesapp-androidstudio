@@ -5,20 +5,19 @@
     android:id="@+id/bg_transport"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/phone7"
+    android:background="@drawable/phone5"
     tools:context=".TransportScreen">
 
     <Button
         android:id="@+id/backbtn3"
-        android:layout_width="54dp"
-        android:layout_height="32dp"
-        android:background="#2196F3"
+        android:layout_width="42dp"
+        android:layout_height="36dp"
+        android:background="@drawable/leftarrowblue"
         android:textAlignment="viewStart"
         android:textStyle="bold|italic"
-        app:icon="@drawable/lefrarrorblack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintHorizontal_bias="0.032"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
@@ -27,6 +26,7 @@
         android:id="@+id/buggyText"
         android:layout_width="155dp"
         android:layout_height="30dp"
+        android:layout_marginTop="167dp"
         android:background="@color/white"
         android:text="Buggy"
         android:textAlignment="center"
@@ -36,7 +36,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.101"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buggyimage"
+        app:layout_constraintTop_toTopOf="@+id/buggyimage"
         app:layout_constraintVertical_bias="0.016" />
 
     <ImageView
@@ -80,12 +80,13 @@
         android:layout_width="155dp"
         android:layout_height="30dp"
         android:layout_marginTop="208dp"
+        android:layout_marginBottom="175dp"
         android:background="@color/white"
         android:text="Car"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/carImage"
+        app:layout_constraintBottom_toBottomOf="@+id/carImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.863"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,6 +97,7 @@
         android:id="@+id/scooterText"
         android:layout_width="155dp"
         android:layout_height="30dp"
+        android:layout_marginTop="165dp"
         android:layout_marginBottom="172dp"
         android:background="@color/white"
         android:text="Scooter"
@@ -106,7 +108,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.101"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scooterImage" />
+        app:layout_constraintTop_toTopOf="@+id/scooterImage" />
 
     <ImageView
         android:id="@+id/scooterImage"
@@ -136,12 +138,13 @@
         android:layout_width="155dp"
         android:layout_height="30dp"
         android:layout_marginTop="444dp"
+        android:layout_marginBottom="165dp"
         android:background="@color/white"
         android:text="Quad"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/quadImage"
+        app:layout_constraintBottom_toBottomOf="@+id/quadImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.863"
         app:layout_constraintStart_toStartOf="parent"

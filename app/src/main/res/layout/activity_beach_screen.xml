@@ -10,57 +10,110 @@
 
     <Button
         android:id="@+id/btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#2196F3"
-        android:text="BACK"
+        android:layout_width="47dp"
+        android:layout_height="48dp"
+        android:background="@drawable/leftarrowblue"
+        android:backgroundTint="#2196F3"
+        android:textColor="#2196F3"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.945" />
+        app:layout_constraintVertical_bias="0.976"
+        app:strokeColor="#2196F3" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="154dp"
-        android:layout_height="191dp"
+        android:layout_width="34dp"
+        android:layout_height="129dp"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintHorizontal_bias="0.110"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.205">
+        app:layout_constraintVertical_bias="0.200">
 
         <RadioButton
             android:id="@+id/radio1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Caldera Beach"
-            tools:text="Caldera Beach" />
+            android:layout_height="30dp" />
 
         <RadioButton
             android:id="@+id/radio2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Eros Beach"
-            tools:text="Eros Beach" />
+            android:layout_height="33dp" />
 
         <RadioButton
             android:id="@+id/radio3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Red Beach"
-            tools:text="Red Beach" />
+            android:layout_height="32dp" />
 
         <RadioButton
             android:id="@+id/radio4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="White Beach"
-            tools:text="White Beach" />
+            android:layout_height="32dp" />
+
     </RadioGroup>
+
+    <TextView
+        android:id="@+id/calderaText"
+        android:layout_width="140dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="192dp"
+        android:background="@color/white"
+        android:text="Caldera Beach"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.171" />
+
+    <TextView
+        android:id="@+id/erosText"
+        android:layout_width="140dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="192dp"
+        android:layout_marginBottom="548dp"
+        android:background="@color/white"
+        android:text="Eros Beach"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/redText"
+        android:layout_width="140dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="192dp"
+        android:layout_marginBottom="516dp"
+        android:background="@color/white"
+        android:text="Red Beach"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/whiteText"
+        android:layout_width="140dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="192dp"
+        android:layout_marginBottom="484dp"
+        android:background="@color/white"
+        android:text="White Beach"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

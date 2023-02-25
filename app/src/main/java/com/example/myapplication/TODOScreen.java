@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class HotelsScreen extends AppCompatActivity {
+public class TODOScreen extends AppCompatActivity {
 
     private Button backbtn;
 
@@ -25,7 +25,7 @@ public class HotelsScreen extends AppCompatActivity {
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(HotelsScreen.this, MenuScreen.class);
+                Intent i = new Intent(TODOScreen.this, MenuScreen.class);
                 startActivity(i);
             }
         });

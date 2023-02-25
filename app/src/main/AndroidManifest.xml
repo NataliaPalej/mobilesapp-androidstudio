@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +14,18 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".TipsScreen"
+            android:exported="false" />
+        <activity
+            android:name=".OiaScreen"
+            android:exported="false" />
+        <activity
+            android:name=".AkrotiriScreen"
+            android:exported="false" />
+        <activity
+            android:name=".FiraScreen"
+            android:exported="false" />
+        <activity
             android:name=".AdventureScreen"
             android:exported="false" />
         <activity
@@ -21,7 +35,7 @@
             android:name=".TransportScreen"
             android:exported="false" />
         <activity
-            android:name=".HotelsScreen"
+            android:name=".TODOScreen"
             android:exported="false" />
         <activity
             android:name=".MenuScreen"
