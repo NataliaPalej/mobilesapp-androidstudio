@@ -10,9 +10,6 @@ import android.widget.ImageView;
 
 public class AkrotiriScreen extends AppCompatActivity {
 
-    private ImageView previous;
-    private Button menu;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -12,15 +12,10 @@ import android.widget.RadioButton;
 public class BeachScreen extends AppCompatActivity {
 
     private ConstraintLayout cons_layout;
-
     //Back button
     private Button btn;
-
     // Radio buttons for different beaches
-    private RadioButton radio1;
-    private RadioButton radio2;
-    private RadioButton radio3;
-    private RadioButton radio4;
+    private RadioButton radio1, radio2, radio3, radio4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

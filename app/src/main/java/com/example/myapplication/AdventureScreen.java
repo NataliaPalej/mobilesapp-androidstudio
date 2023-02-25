@@ -11,8 +11,7 @@ import android.widget.ImageView;
 
 public class AdventureScreen extends AppCompatActivity {
 
-    private ImageView back;
-    private ImageView next;
+    private ImageView back, next;
     private Button bookTrip;
 
     @Override
@@ -48,9 +47,6 @@ public class AdventureScreen extends AppCompatActivity {
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
-
-
-
         });
     }
 }

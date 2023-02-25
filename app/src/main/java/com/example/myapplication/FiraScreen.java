@@ -9,8 +9,7 @@ import android.widget.ImageView;
 
 public class FiraScreen extends AppCompatActivity {
 
-    private ImageView previous;
-    private ImageView next;
+    private ImageView previous, next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -9,12 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class MenuScreen extends AppCompatActivity {
-
-    private Button adventureScreen;
-    private Button beachScreen;
-    private Button todoScreen;
-    private Button transportScreen;
-    private Button tipsScreen;
+    private Button adventureScreen, beachScreen, todoScreen, transportScreen, tipsScreen;
     private ImageView exit;
 
     @Override

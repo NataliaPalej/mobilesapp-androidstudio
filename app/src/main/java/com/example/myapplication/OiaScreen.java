@@ -12,10 +12,9 @@ import android.widget.ImageView;
 
 public class OiaScreen extends AppCompatActivity {
 
-    private ImageView previous;
-    private ImageView next;
-    private Button trip;
-    private Button hoteldelta, hotelpersa, hoteloiamare, hotelsecret;
+    private ImageView previous, next;
+    private Button trip, hoteldelta, hotelpersa, hoteloiamare, hotelsecret;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -32,8 +31,8 @@ public class OiaScreen extends AppCompatActivity {
             }
         });
 
-        next = findViewById(R.id.back2);
-        next.setOnClickListener(new View.OnClickListener() {
+        previous = findViewById(R.id.back2);
+        previous.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(OiaScreen.this, FiraScreen.class);
@@ -78,7 +77,7 @@ public class OiaScreen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        
+
         trip = findViewById(R.id.firaoiatrip);
         trip.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
