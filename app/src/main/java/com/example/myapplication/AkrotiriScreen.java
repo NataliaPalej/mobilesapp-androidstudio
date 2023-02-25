@@ -4,17 +4,63 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 public class AkrotiriScreen extends AppCompatActivity {
+
+    private ImageView backbtn_4
+    private Button mainmenu_btn, booknow;
+    private EditText editDate, editPeople, editEmail, editExtra;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_akrotiri_screen);
 
+        backbtn_4 = findViewById(R.id.backbtn_4);
+        backbtn_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(AkrotiriScreen.this, OiaScreen.class);
+                startActivity(i);
+            }
+        });
 
+        mainmenu_btn = findViewById(R.id.mainmenu_btn);
+        mainmenu_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(AkrotiriScreen.this, MenuScreen.class);
+                startActivity(i);
+            }
+        });
+
+        booknow = findViewById(R.id.booknow);
+        editDate = findViewById(R.id.editDate);
+        editPeople = findViewById(R.id.editPeople);
+        editEmail = findViewById(R.id.editEmail);
+        editExtra = findViewById(R.id.editExtra);
+
+        booknow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                Intent i = new Intent(AkrotiriScreen.this, Akrotiri_TripScreen.class);
+                String date = editDate.getText().toString();
+                String people = editPeople.getText().toString();
+                String email = editEmail.getText().toString();
+                String extra = editExtra.getText().toString();
+
+                i.putExtra("Date: ", date);
+                i.putExtra("People: ", people);
+                i.putExtra("Email: ", email);
+                i.putExtra("Extra Info: ", extra);
+
+                startActivity(i);
+            }
+        });
     }
 }

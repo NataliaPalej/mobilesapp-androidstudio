@@ -130,13 +130,6 @@
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/whentxt"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="#A8D0F1"
-                        android:text="Date:" />
-
                     <EditText
                         android:id="@+id/editDate"
                         android:layout_width="match_parent"
@@ -145,14 +138,6 @@
                         android:hint="date"
                         android:inputType="date"
                         android:textColor="@color/black" />
-
-                    <TextView
-                        android:id="@+id/peopletxt"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="#A8D0F1"
-                        android:backgroundTint="#A8D0F1"
-                        android:text="People:" />
 
                     <EditText
                         android:id="@+id/editPeople"
@@ -174,7 +159,7 @@
                         android:textSize="14sp" />
 
                     <EditText
-                        android:id="@+id/editTextTextPersonName2"
+                        android:id="@+id/editExtra"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -182,6 +167,13 @@
                         android:inputType="textPersonName"
                         android:textColor="@color/black"
                         android:textSize="14sp" />
+
+                    <Button
+                        android:id="@+id/booknow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#2196F3"
+                        android:text="BOOK NOW" />
                 </LinearLayout>
 
             </LinearLayout>

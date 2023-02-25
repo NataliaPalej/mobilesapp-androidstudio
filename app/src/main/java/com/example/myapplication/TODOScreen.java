@@ -12,11 +12,10 @@ public class TODOScreen extends AppCompatActivity {
 
     private Button backbtn;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hotels_screen);
+        setContentView(R.layout.activity_todo_screen);
 
 
 

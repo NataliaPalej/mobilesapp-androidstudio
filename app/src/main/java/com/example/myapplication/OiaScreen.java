@@ -15,12 +15,10 @@ public class OiaScreen extends AppCompatActivity {
     private ImageView previous, next;
     private Button trip, hoteldelta, hotelpersa, hoteloiamare, hotelsecret;
 
-
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_akrotiri_screen);
+        setContentView(R.layout.activity_oia_screen);
 
         next = findViewById(R.id.next2);
         next.setOnClickListener(new View.OnClickListener() {
