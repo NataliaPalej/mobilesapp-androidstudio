@@ -9,18 +9,6 @@
     android:background="@drawable/volcano"
     tools:context=".AdventureScreen">
 
-    <Button
-        android:id="@+id/backbtn1"
-        android:layout_width="58dp"
-        android:layout_height="57dp"
-        android:background="@drawable/leftarrowblue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
-
     <ScrollView
         android:layout_width="370dp"
         android:layout_height="190dp"
@@ -32,6 +20,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:alpha="0.9"
             android:orientation="vertical">
 
             <TextView
@@ -70,21 +59,34 @@
         android:id="@+id/volcanotrip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="140dp"
         android:layout_marginTop="436dp"
         android:backgroundTint="#03A9F4"
         android:text="Book trip here"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="344dp"
+        android:layout_marginBottom="252dp"
+        android:alpha="0.9"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/leftarrowblue" />
+
+    <ImageView
         android:id="@+id/next"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="292dp"
-        android:layout_marginTop="436dp"
-        android:backgroundTint="#03A9F4"
-        android:text="next"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="252dp"
+        android:alpha="0.9"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/rightarrowblue" />
 </androidx.constraintlayout.widget.ConstraintLayout>

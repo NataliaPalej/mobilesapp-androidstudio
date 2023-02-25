@@ -7,11 +7,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class AdventureScreen extends AppCompatActivity {
 
-    private Button backbtn1;
-    private Button next;
+    private ImageView back;
+    private ImageView next;
     private Button bookTrip;
 
     @Override
@@ -20,8 +21,8 @@ public class AdventureScreen extends AppCompatActivity {
         setContentView(R.layout.activity_adventure_screen);
 
         // Back Button
-        backbtn1 = findViewById(R.id.backbtn1);
-        backbtn1.setOnClickListener(new View.OnClickListener() {
+        back = findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(AdventureScreen.this, MenuScreen.class);
@@ -29,7 +30,7 @@ public class AdventureScreen extends AppCompatActivity {
             }
         });
 
-        next = findViewById(R.id.backbtn1);
+        next = findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
