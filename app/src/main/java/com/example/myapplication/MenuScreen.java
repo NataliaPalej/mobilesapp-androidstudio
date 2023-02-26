@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class MenuScreen extends AppCompatActivity {
-    private Button adventureScreen, beachScreen, todoScreen, transportScreen, tipsScreen;
+    private Button adventureScreen, beachScreen, mapScreen, transportScreen, tipsScreen;
     private ImageView exit;
 
     @Override
@@ -23,16 +23,6 @@ public class MenuScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MenuScreen.this, TransportScreen.class);
-                startActivity(i);
-            }
-        });
-
-        // Go to Hotel Screen
-        todoScreen = findViewById(R.id.btn2);
-        todoScreen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MenuScreen.this, TODOScreen.class);
                 startActivity(i);
             }
         });
@@ -63,6 +53,16 @@ public class MenuScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MenuScreen.this, TipsScreen.class);
+                startActivity(i);
+            }
+        });
+
+        // Go to Map Screen
+        mapScreen = findViewById(R.id.btn6);
+        mapScreen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MenuScreen.this, MapScreen.class);
                 startActivity(i);
             }
         });

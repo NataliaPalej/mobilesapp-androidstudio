@@ -1,13 +1,15 @@
 <resources>
     <string name="app_name">My Application</string>
 
-    <string name="vulcano">
- <b>Departure point:</b> Ormos Athinios, Greece
- <b>Start Time:</b> 10:00 AM<br />
- <b>Santorini Volcano</b> <i>1h30min</i> - walk an ascending path to the crater of the still active volcano<br />
- <b>Nea Kameni</b> <i>1h30min</i> - guided tour to the Lava islet of Nea Kameni<br />
- <b>Palea Kameni </b><i>30min</i> - jump off the boat into warm thermal waters<br />
- <b>Thirassia </b><i>1h30min</i> - visit village of Manolas on donkey or walk winding stairs<br />
+    <string name="vulcano"><b>Departure point:</b> Ormos Athinios, Greece<br />
+<b>Start Time:</b> 10:00 AM<br />
+<b>Santorini Volcano</b> <i>1h30min</i> - walk an ascending path to the crater of the still active volcano<br />
+<b>Nea Kameni</b> <i>1h30min</i> - guided tour to the Lava islet of Nea Kameni<br />
+<b>Palea Kameni </b><i>30min</i> - jump off the boat into warm thermal waters<br />
+<b>Thirassia </b><i>1h30min</i> - visit village of Manolas on donkey or walk winding stairs<br />
+<br />
+The active volcano lies underwater, but everyone can visit and wonder the two formed by black lava islands of Palaia Kameni and Nea Kameni. You can explore the imposing volcanic scenery and admire its wild beauty, see its crater, stroll around and touch the black lava rocks and certainly get this unique feeling of hiking on a steaming Volcano.<br />
+In addition, at the foothills of Palaia Kameni island, there are the famous Hot Springs, waters full of sulfur that are known for their therapeutic effects. You can enjoy yourself with a different mud bath while gazing at the amazing view of the Caldera that lies opposite.
     </string>
 
     <string name="fira"><b>Fira Town</b>
@@ -23,11 +25,18 @@ An abundance of accommodation options can be found in the capital of Santorini, 
     </string>
 
     <string name="oia"><b>Oia</b> is located 11 km away from Fira and is a pedestrian town. Most of the visitors come here to admire its unique architecture, captains houses, Blue Domes, cave houses and the sunset. You can see crowds of people here any time of the day, for its a must to see if you are in Santorini.
-
+        Oia is perched above <b>the caldera</b>, hence the best views of the crater can be seen from the village. The thousand-year-old caldera was formed after the Minoan eruption. It is one of the virgin beauties of the world. Some believe the Caldera has strong ties with the lost city of Atlantis, others think it has stronger links with the Biblical book of Exodus.
+Oia has the most beautiful sunset in the world. The best time to have panoramic views of the Aegean Sea in all its glory is during dusk. The sun appears to take a dip in the Aegean changing the sky to enchanting shades of pinks and oranges, the cerulean waters of the seas illuminate a gorgeous hue of burnt orange. It has been said that the most remarkable place to have these sightings is from the touristyOia Castle. Little wonder the place is always crowded with visitors falling over themselves to get the most spectacular sunset they will ever see.
     </string>
 
     <string name="akrotiri"><b>Akrotiri</b> came to an abrupt end in approximately 1613 BC with a catastrophic volcanic eruption that buried the Bronze Age settlement in a carpet of ash. Beginning in 1967, excavations of the Minoan town revealed buildings, drainage systems, and pottery, but no human remains or gold valuables, indicating locals had time to flee before disaster hit.
     </string>
 
     <string name="akrotiri_ruins"><h2>Archaeological bus tour to Akrotiri excavations and Red beach</h2></string>
+
+    <string name="Thirassia">The island of <b>Thirassia</b> is located adjacent to Santorini; in fact, it was once a part of it.
+The volcanic eruption that occurred at around 1500 BC snapped Santorini off and Thirassia emerged. Nowadays, Thirassia is a virgin island, still untouched by tourism and modern lifestyle.
+The island is only 9 sq. km in size and has only 150 permanent inhabitants.
+Manolas village is the capital, while other settlements include Korfos, Riva, and Potamos. A walk through villages can also be a wonderful experience, as in front of the houses lie gardens with colorful blossoms.
+    </string>
 </resources>

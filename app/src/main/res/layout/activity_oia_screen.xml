@@ -12,7 +12,7 @@
         android:id="@+id/firaoiatrip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="484dp"
+        android:layout_marginTop="600dp"
         android:layout_marginEnd="104dp"
         android:backgroundTint="#2196F3"
         android:text="Book Fira - Oia Trip"
@@ -21,25 +21,25 @@
 
     <ImageView
         android:id="@+id/back2"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="484dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
         android:alpha="0.9"
         android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/leftarrowblue" />
 
     <ImageView
         android:id="@+id/next2"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="484dp"
-        android:layout_marginEnd="52dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/rightarrowblue" />
 
     <ImageView
@@ -54,7 +54,7 @@
 
     <ScrollView
         android:layout_width="380dp"
-        android:layout_height="360dp"
+        android:layout_height="490dp"
         android:layout_marginTop="100dp"
         android:alpha="0.9"
         android:background="@color/white"
@@ -67,13 +67,19 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView2"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="142dp"
-                android:text="@string/oia"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="142dp"
+                    android:text="@string/oia"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
 
             <ImageView
                 android:id="@+id/hoteldelta"
