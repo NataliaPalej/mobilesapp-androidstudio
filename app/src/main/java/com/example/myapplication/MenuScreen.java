@@ -58,7 +58,7 @@ public class MenuScreen extends AppCompatActivity {
         });
 
         // Go to Map Screen
-        mapScreen = findViewById(R.id.btn6);
+        mapScreen = findViewById(R.id.btn2);
         mapScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

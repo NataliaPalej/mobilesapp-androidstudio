@@ -13,9 +13,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="600dp"
-        android:layout_marginEnd="104dp"
+        android:layout_marginEnd="90dp"
         android:backgroundTint="#2196F3"
-        android:text="Book Fira - Oia Trip"
+        android:text="Book Fira - Oia Hiking Trip"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -67,19 +67,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/textView2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="142dp"
-                    android:text="@string/oia"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-            </LinearLayout>
+                android:layout_height="142dp"
+                android:text="@string/oia"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
             <ImageView
                 android:id="@+id/hoteldelta"
