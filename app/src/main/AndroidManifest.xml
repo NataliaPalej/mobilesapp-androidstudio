@@ -38,9 +38,6 @@
             android:name=".TransportScreen"
             android:exported="false" />
         <activity
-            android:name=".TODOScreen"
-            android:exported="false" />
-        <activity
             android:name=".MenuScreen"
             android:exported="false" />
         <activity

@@ -7,13 +7,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 
 public class BeachScreen extends AppCompatActivity {
 
     private ConstraintLayout cons_layout;
     //Back button
-    private Button btn;
+    private ImageView btn;
     // Radio buttons for different beaches
     private RadioButton radio1, radio2, radio3, radio4;
 

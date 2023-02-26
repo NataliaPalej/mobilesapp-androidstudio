@@ -10,8 +10,7 @@ import android.widget.ImageView;
 
 public class TransportScreen extends AppCompatActivity {
 
-    private Button backbtn3;
-    private ImageView buggyImage, scooterImage, carImage, quadImage;
+    private ImageView buggyImage, scooterImage, carImage, quadImage, backbtn3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

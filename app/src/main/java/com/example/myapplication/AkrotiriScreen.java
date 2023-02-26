@@ -12,7 +12,7 @@ import android.widget.ImageView;
 
 public class AkrotiriScreen extends AppCompatActivity {
 
-    private ImageView backbtn_4
+    private ImageView backbtn_4, akrotiri_ruins, akrotiri_lighthouse;
     private Button mainmenu_btn, booknow;
     private EditText editDate, editPeople, editEmail, editExtra;
 
@@ -50,16 +50,33 @@ public class AkrotiriScreen extends AppCompatActivity {
             public void onClick(View view){
                 Intent i = new Intent(AkrotiriScreen.this, Akrotiri_TripScreen.class);
                 String date = editDate.getText().toString();
-                String people = editPeople.getText().toString();
-                String email = editEmail.getText().toString();
-                String extra = editExtra.getText().toString();
+                //String people = editPeople.getText().toString();
+                //String email = editEmail.getText().toString();
+                //String extra = editExtra.getText().toString();
 
                 i.putExtra("Date: ", date);
-                i.putExtra("People: ", people);
-                i.putExtra("Email: ", email);
-                i.putExtra("Extra Info: ", extra);
+                //i.putExtra("People: ", people);
+                //i.putExtra("Email: ", email);
+                //i.putExtra("Extra Info: ", extra);
 
                 startActivity(i);
+            }
+        });
+
+        // Change car image on click
+        akrotiri_ruins = findViewById(R.id.akrotiri_ruins);
+        akrotiri_ruins.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                akrotiri_ruins.setImageResource(R.drawable.akrotiri3);
+            }
+        });
+
+        akrotiri_lighthouse = findViewById(R.id.akrotiri_lighthouse);
+        akrotiri_lighthouse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                akrotiri_lighthouse.setImageResource(R.drawable.akrotiri4);
             }
         });
     }
