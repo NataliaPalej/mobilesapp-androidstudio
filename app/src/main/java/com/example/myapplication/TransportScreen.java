@@ -3,14 +3,14 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 
 public class TransportScreen extends AppCompatActivity {
 
-    private ImageView buggyImage, scooterImage, carImage, quadImage, backbtn3;
+    private ImageView buggyImage, scooterImage, carImage, quadImage, backbtn3, imgcall;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +60,19 @@ public class TransportScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(TransportScreen.this, MenuScreen.class);
                 startActivity(i);
+            }
+        });
+
+        // Call Img Button
+        imgcall = findViewById(R.id.imgcall);
+        imgcall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent();
+                i.setAction(Intent.ACTION_DIAL);
+                i.setData(Uri.parse("tel:" + "012 345 6789"));
+                if (i.resolveActivity(getPackageManager()) != null)
+                    startActivity(i);
             }
         });
     }
