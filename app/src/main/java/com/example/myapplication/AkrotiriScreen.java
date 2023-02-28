@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 public class AkrotiriScreen extends AppCompatActivity {
-
     private ImageView backbtn_4, akrotiri_ruins, akrotiri_lighthouse;
     private Button mainmenu_btn, booknow;
     private EditText editDate, editPeople, editEmail, editExtra;
@@ -54,10 +53,10 @@ public class AkrotiriScreen extends AppCompatActivity {
                 //String email = editEmail.getText().toString();
                 //String extra = editExtra.getText().toString();
 
-                i.putExtra("Date: ", date);
-                //i.putExtra("People: ", people);
-                //i.putExtra("Email: ", email);
-                //i.putExtra("Extra Info: ", extra);
+                i.putExtra("TextToSend", date);
+                //i.putExtra("TextToSend2", people);
+                //i.putExtra("TextToSend3", email);
+                //i.putExtra("TextToSend4", extra);
 
                 startActivity(i);
             }

@@ -144,7 +144,7 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:hint="date"
-                        android:inputType="date"
+                        android:inputType="text"
                         android:text="DD/MM/YYYY"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
@@ -155,7 +155,7 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:hint="number"
-                        android:inputType="number"
+                        android:inputType="text"
                         android:text="people no"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
@@ -166,7 +166,7 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:hint="your@email.com"
-                        android:inputType="textEmailAddress"
+                        android:inputType="text"
                         android:text="your@email.com"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
@@ -177,7 +177,7 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:hint="extra info"
-                        android:inputType="textPersonName"
+                        android:inputType="text"
                         android:text="extra info"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
