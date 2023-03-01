@@ -43,7 +43,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="401dp"
-        android:layout_height="584dp"
+        android:layout_height="527dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="80dp"
         android:alpha="0.9"
@@ -54,7 +54,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="526dp"
             android:orientation="vertical">
 
             <ScrollView
@@ -72,7 +72,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/akrotiri"
                         android:textColor="@color/black"
-                        android:textSize="14sp" />
+                        android:textSize="16sp" />
                 </LinearLayout>
             </ScrollView>
 
@@ -94,61 +94,90 @@
                     app:srcCompat="@drawable/akrotiri2" />
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#2196F3"
+                android:text="@string/akrotiri_ruins"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#F1F4F6"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:background="#2196F3"
-                    android:text="@string/akrotiri_ruins"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/booktrip"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#8DD890"
-                    android:text="BOOK YOUR TRIP NOW"
-                    android:textAlignment="center"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                android:layout_height="300dp"
+                android:orientation="horizontal">
 
                 <CalendarView
                     android:id="@+id/calendarView"
-                    android:layout_width="213dp"
-                    android:layout_height="200dp"
+                    android:layout_width="250dp"
+                    android:layout_height="300dp"
                     android:background="#2E7130"
                     android:focusedMonthDateColor="@color/white"
                     android:weekNumberColor="@color/black"
                     android:weekSeparatorLineColor="@color/black" />
 
-                <EditText
-                    android:id="@+id/editDate"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="text"
-                    android:text="MM/DD/YYYY, no people, email address, extra info"
-                    android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/booknow"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#2196F3"
-                    android:text="BOOK NOW" />
+                    <TextView
+                        android:id="@+id/booktrip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#8DD890"
+                        android:text="BOOK YOUR TRIP NOW"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
+                    <EditText
+                        android:id="@+id/editDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:text="MM/DD/YYYY"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/editPeople"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="No of people" />
+
+                    <EditText
+                        android:id="@+id/editEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="your@email.com"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/editExtra"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="Extra Info" />
+
+                    <Button
+                        android:id="@+id/booknow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#2196F3"
+                        android:text="BOOK NOW" />
+                </LinearLayout>
             </LinearLayout>
 
         </LinearLayout>

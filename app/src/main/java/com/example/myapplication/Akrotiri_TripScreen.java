@@ -24,14 +24,15 @@ public class Akrotiri_TripScreen extends AppCompatActivity {
 
         try{
             Bundle extras = getIntent().getExtras();
-            String text1 = extras.getString("TextToSend");
-            //String text2 = extras.getString("TextToSend");
-            //String text3 = extras.getString("TextToSend");
-            //String text4 = extras.getString("TextToSend");
-            tripDetails.setText(text1);
-            //tripDetails.setText(text2);
-            //tripDetails.setText(text3);
-            //tripDetails.setText(text4);
+            String date = extras.getString("TextToSend");
+            String people = extras.getString("TextToSend2");
+            String email = extras.getString("TextToSend3");
+            String extra = extras.getString("TextToSend4");
+
+            String bookingDetails = "Date: " + date + "\nPeople: " + people + "\nEmail: " + email + "\nExtra Info: " + extra;
+
+            tripDetails.setText(bookingDetails);
+
         } catch (RuntimeException e) {
             e.printStackTrace();
         }

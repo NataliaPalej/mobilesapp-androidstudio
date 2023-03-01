@@ -49,14 +49,14 @@ public class AkrotiriScreen extends AppCompatActivity {
             public void onClick(View view){
                 Intent i = new Intent(AkrotiriScreen.this, Akrotiri_TripScreen.class);
                 String date = editDate.getText().toString();
-                //String people = editPeople.getText().toString();
-                //String email = editEmail.getText().toString();
-                //String extra = editExtra.getText().toString();
+                String people = editPeople.getText().toString();
+                String email = editEmail.getText().toString();
+                String extra = editExtra.getText().toString();
 
                 i.putExtra("TextToSend", date);
-                //i.putExtra("TextToSend2", people);
-                //i.putExtra("TextToSend3", email);
-                //i.putExtra("TextToSend4", extra);
+                i.putExtra("TextToSend2", people);
+                i.putExtra("TextToSend3", email);
+                i.putExtra("TextToSend4", extra);
 
                 startActivity(i);
             }
