@@ -140,29 +140,38 @@
                         android:id="@+id/editDate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:contentDescription="MM/DD/YYYY"
                         android:ems="10"
                         android:hint="MM/DD/YYYY"
                         android:inputType="date|text"
+                        android:singleLine="true"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        tools:text="MM/DD/YYYY" />
 
                     <EditText
                         android:id="@+id/editPeople"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:contentDescription="No of people"
                         android:ems="10"
                         android:hint="No of people"
                         android:inputType="text"
+                        android:singleLine="true"
+                        android:text="No of people"
                         android:textAlignment="center" />
 
                     <EditText
                         android:id="@+id/editEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:contentDescription="your@email.com"
                         android:ems="10"
                         android:hint="your@email.com"
                         android:inputType="text|textEmailAddress"
+                        android:singleLine="true"
+                        android:text="your@email.com"
                         android:textAlignment="center"
                         android:textSize="14sp" />
 
@@ -170,9 +179,11 @@
                         android:id="@+id/editExtra"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:contentDescription="Extra Info"
                         android:ems="10"
                         android:hint="Extra Info"
                         android:inputType="text"
+                        android:text="Extra Info"
                         android:textAlignment="center" />
 
                     <Button
