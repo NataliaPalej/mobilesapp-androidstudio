@@ -141,8 +141,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:inputType="text"
-                        android:text="MM/DD/YYYY"
+                        android:hint="MM/DD/YYYY"
+                        android:inputType="date|text"
+                        android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
 
@@ -151,16 +152,18 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:inputType="textPersonName"
-                        android:text="No of people" />
+                        android:hint="No of people"
+                        android:inputType="text"
+                        android:textAlignment="center" />
 
                     <EditText
                         android:id="@+id/editEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:inputType="textPersonName"
-                        android:text="your@email.com"
+                        android:hint="your@email.com"
+                        android:inputType="text|textEmailAddress"
+                        android:textAlignment="center"
                         android:textSize="14sp" />
 
                     <EditText
@@ -168,8 +171,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:inputType="textPersonName"
-                        android:text="Extra Info" />
+                        android:hint="Extra Info"
+                        android:inputType="text"
+                        android:textAlignment="center" />
 
                     <Button
                         android:id="@+id/booknow"

@@ -15,6 +15,7 @@ public class AkrotiriScreen extends AppCompatActivity {
     private Button mainmenu_btn, booknow;
     private EditText editDate, editPeople, editEmail, editExtra;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

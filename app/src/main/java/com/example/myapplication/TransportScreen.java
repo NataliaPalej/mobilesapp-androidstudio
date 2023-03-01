@@ -11,6 +11,7 @@ import android.widget.ImageView;
 public class TransportScreen extends AppCompatActivity {
 
     private ImageView buggyImage, scooterImage, carImage, quadImage, backbtn3, imgcall;
+    private int count = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +23,17 @@ public class TransportScreen extends AppCompatActivity {
         buggyImage.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view){
-              buggyImage.setImageResource(R.drawable.buggy2);
+              count++;
+              if(count==1){
+                  buggyImage.setImageResource(R.drawable.buggy);
+              }
+              if (count==2){
+                  buggyImage.setImageResource(R.drawable.buggy2);
+              }
+              if(count==3){
+                  buggyImage.setImageResource(R.drawable.buggy3);
+                  count = 0;
+              }
           }
         });
 
@@ -31,7 +42,17 @@ public class TransportScreen extends AppCompatActivity {
         carImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                carImage.setImageResource(R.drawable.car2);
+                count++;
+                if(count==1){
+                    carImage.setImageResource(R.drawable.car);
+                }
+                if (count==2){
+                    carImage.setImageResource(R.drawable.car2);
+                }
+                if(count==3){
+                    carImage.setImageResource(R.drawable.car3);
+                    count = 0;
+                }
             }
         });
 
@@ -40,7 +61,17 @@ public class TransportScreen extends AppCompatActivity {
         scooterImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                scooterImage.setImageResource(R.drawable.scooter2);
+                count++;
+                if(count==1){
+                    scooterImage.setImageResource(R.drawable.scooter);
+                }
+                if (count==2){
+                    scooterImage.setImageResource(R.drawable.scooter2);
+                }
+                if(count==3){
+                    scooterImage.setImageResource(R.drawable.scooter3);
+                    count = 0;
+                }
             }
         });
 
@@ -49,7 +80,17 @@ public class TransportScreen extends AppCompatActivity {
         quadImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                quadImage.setImageResource(R.drawable.quad2);
+                count++;
+                if(count==1){
+                    quadImage.setImageResource(R.drawable.quad);
+                }
+                if (count==2){
+                    quadImage.setImageResource(R.drawable.quad2);
+                }
+                if(count==3) {
+                    quadImage.setImageResource(R.drawable.quad3);
+                    count = 0;
+                }
             }
         });
 
