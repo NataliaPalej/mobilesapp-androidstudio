@@ -49,7 +49,7 @@ public class Akrotiri_TripScreen extends AppCompatActivity {
         back_btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Akrotiri_TripScreen.this, MenuScreen.class);
+                Intent i = new Intent(Akrotiri_TripScreen.this, AkrotiriScreen.class);
                 startActivity(i);
             }
         });
