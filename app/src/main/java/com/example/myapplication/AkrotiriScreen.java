@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -14,6 +15,7 @@ public class AkrotiriScreen extends AppCompatActivity {
     private ImageView backbtn_4, akrotiri_ruins, akrotiri_lighthouse;
     private Button mainmenu_btn, booknow;
     private EditText editDate, editPeople, editEmail, editExtra;
+    private SharedPreferences database;
 
 
     @Override
@@ -60,6 +62,19 @@ public class AkrotiriScreen extends AppCompatActivity {
                 i.putExtra("TextToSend4", extra);
 
                 startActivity(i);
+
+                // store the booking
+                database = getApplicationContext().getSharedPreferences("table_store_text", MODE_PRIVATE);
+                SharedPreferences.Editor editor = database.edit();
+                String txt1 = editDate.getText().toString();
+                editor.putString("Date: ", txt1);
+                String txt2 = editPeople.getText().toString();
+                editor.putString("Number of People: ", txt2);
+                String txt3 = editEmail.getText().toString();
+                editor.putString("Email: ", txt3);
+                String txt4 = editExtra.getText().toString();
+                editor.putString("Extra Info: ", txt4);
+
             }
         });
 
