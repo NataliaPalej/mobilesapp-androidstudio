@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:background="@drawable/fira"
     tools:context=".FiraScreen">
@@ -69,6 +69,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="200dp"
         android:layout_height="145dp"
         android:layout_marginStart="24dp"
@@ -96,6 +97,81 @@
             android:layout_width="171dp"
             android:layout_height="160dp"
             app:srcCompat="@drawable/firamap" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="289dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="560dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#32CA38"
+                android:text="CHECK IN LIST IN THERA (FIRA)"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16dp" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Eat Souvlaki"
+                        android:textAlignment="center" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Visit 2Bros Pub"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Visit Old Harbour"
+                        android:textAlignment="center" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Do Fira-Oia Hicking"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+            </com.google.android.material.chip.ChipGroup>
+
+        </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
