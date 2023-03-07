@@ -1,15 +1,14 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class AkrotiriScreen extends AppCompatActivity {
     private ImageView backbtn_4, akrotiri_ruins, akrotiri_lighthouse;
@@ -74,6 +73,8 @@ public class AkrotiriScreen extends AppCompatActivity {
                 editor.putString("Email: ", txt3);
                 String txt4 = editExtra.getText().toString();
                 editor.putString("Extra Info: ", txt4);
+                editor.commit();
+                Toast.makeText(AkrotiriScreen.this, "Booking Completed", Toast.LENGTH_SHORT).show();
 
             }
         });

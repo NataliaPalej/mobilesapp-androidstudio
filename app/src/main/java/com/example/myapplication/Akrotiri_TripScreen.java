@@ -3,17 +3,20 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Akrotiri_TripScreen extends AppCompatActivity {
 
     private TextView tripDetails;
     private ImageView back_btn2;
     private Button menu_btn2;
+    private SharedPreferences database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,11 @@ public class Akrotiri_TripScreen extends AppCompatActivity {
             String bookingDetails = "Date: " + date + "\nPeople: " + people + "\nEmail: " + email + "\nExtra Info: " + extra;
 
             tripDetails.setText(bookingDetails);
+
+            // show saved details on another screen
+            database = getApplicationContext().getSharedPreferences("table_store_text", MODE_PRIVATE);
+            String bookingSaved = database.getString("Booking Successful", null);
+            Toast.makeText(Akrotiri_TripScreen.this, bookingSaved, Toast.LENGTH_SHORT).show();
 
         } catch (RuntimeException e) {
             e.printStackTrace();
