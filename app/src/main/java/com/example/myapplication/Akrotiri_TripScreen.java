@@ -37,6 +37,7 @@ public class Akrotiri_TripScreen extends AppCompatActivity {
             tripDetails.setText(bookingDetails);
 
             // show saved details on another screen
+            // if wont work, need to create a button that will show the detials on click
             database = getApplicationContext().getSharedPreferences("table_store_text", MODE_PRIVATE);
             String bookingSaved = database.getString("Booking Successful", null);
             Toast.makeText(Akrotiri_TripScreen.this, bookingSaved, Toast.LENGTH_SHORT).show();
