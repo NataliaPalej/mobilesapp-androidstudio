@@ -54,26 +54,27 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="125dp"
-            android:layout_marginTop="104dp"
-            android:alpha="0.9"
-            android:background="@color/white" />
+            android:layout_height="match_parent"
+            android:alpha="0.85"
+            android:background="@color/white">
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/fira"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fira"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </ScrollView>
+
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="200dp"
         android:layout_height="145dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="370dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="550dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -81,97 +82,87 @@
             android:id="@+id/firaPictures"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="Fira Images"
             app:srcCompat="@drawable/fira1" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="171dp"
-        android:layout_height="155dp"
-        android:layout_marginTop="400dp"
-        android:layout_marginEnd="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/firaMap"
-            android:layout_width="171dp"
-            android:layout_height="160dp"
-            app:srcCompat="@drawable/firamap" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="289dp"
-        android:layout_height="96dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="560dp"
+        android:layout_width="300dp"
+        android:layout_height="179dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="360dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/textView8"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:background="#32CA38"
+            android:text="CHECK IN LIST IN THERA (FIRA)"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
 
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#32CA38"
-                android:text="CHECK IN LIST IN THERA (FIRA)"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF"
-                android:textSize="16dp" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="130dp"
+            android:layout_weight="1"
+            android:checkable="true"
+            android:text="Eat Souvlaki"
+            android:textAlignment="center" />
 
-            <com.google.android.material.chip.ChipGroup
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:layout_weight="1"
+            android:checkable="true"
+            android:text="Visit 2Bros Pub"
+            android:textAlignment="center" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:checkable="true"
+            android:text="Visit Old Harbour"
+            android:textAlignment="center" />
 
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/chip7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Eat Souvlaki"
-                        android:textAlignment="center" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="130dp"
+            android:checkable="true"
+            android:text="Do Fira-Oia Hicking"
+            android:textAlignment="center" />
 
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/chip6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Visit 2Bros Pub"
-                        android:textAlignment="center" />
-                </LinearLayout>
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="30dp"
+            android:background="#2196F3"
+            android:checkable="true"
+            android:text="View Sunset" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/chip4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Visit Old Harbour"
-                        android:textAlignment="center" />
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/chip5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Do Fira-Oia Hicking"
-                        android:textAlignment="center" />
-                </LinearLayout>
-
-            </com.google.android.material.chip.ChipGroup>
-
-        </LinearLayout>
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="140dp"
+            android:layout_marginTop="80dp"
+            android:checkable="true"
+            android:text="Karavolades Stairs" />
 
     </androidx.cardview.widget.CardView>
 
