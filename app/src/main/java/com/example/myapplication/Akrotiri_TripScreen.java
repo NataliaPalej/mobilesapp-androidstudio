@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -15,7 +17,7 @@ public class Akrotiri_TripScreen extends AppCompatActivity {
 
     private TextView tripDetails;
     private ImageView back_btn2;
-    private Button menu_btn2;
+    private Button menu_btn2, detailsBtn;
     private SharedPreferences database;
 
     @Override
@@ -36,15 +38,20 @@ public class Akrotiri_TripScreen extends AppCompatActivity {
 
             tripDetails.setText(bookingDetails);
 
-            // show saved details on another screen
-            // if wont work, need to create a button that will show the detials on click
-            database = getApplicationContext().getSharedPreferences("table_store_text", MODE_PRIVATE);
-            String bookingSaved = database.getString("Booking Successful", null);
-            Toast.makeText(Akrotiri_TripScreen.this, bookingSaved, Toast.LENGTH_SHORT).show();
-
         } catch (RuntimeException e) {
             e.printStackTrace();
         }
+
+        // Retrieve booking from database -- to be fixed as not showing up --
+        detailsBtn = findViewById(R.id.detailsBtn);
+        detailsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                database = getApplicationContext().getSharedPreferences("table_store_text", MODE_PRIVATE);
+                String bookingSaved = database.getString("Booking Successful", null);
+                Toast.makeText(Akrotiri_TripScreen.this, bookingSaved, Toast.LENGTH_SHORT).show();
+            }
+        });
 
         menu_btn2 = findViewById(R.id.menu_btn2);
         menu_btn2.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +69,47 @@ public class Akrotiri_TripScreen extends AppCompatActivity {
                 startActivity(i);
             }
         });
+    }
 
+    // Show menu tab on first screen
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_activity, menu);
+        return true;
+    }
+
+    // Perform action when menu item selected
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.mapMenu) {
+            Intent i = new Intent(Akrotiri_TripScreen.this, MapScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.mainMenu) {
+            Intent i = new Intent(Akrotiri_TripScreen.this, MenuScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.transportMenu) {
+            Intent i = new Intent(Akrotiri_TripScreen.this, TransportScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.beachMenu) {
+            Intent i = new Intent(Akrotiri_TripScreen.this, BeachScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.tipsMenu) {
+            Intent i = new Intent(Akrotiri_TripScreen.this, TipsScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.adventureMenu) {
+            Intent i = new Intent(Akrotiri_TripScreen.this, AdventureScreen.class);
+            startActivity(i);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

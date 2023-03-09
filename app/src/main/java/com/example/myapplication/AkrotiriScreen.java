@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,8 +17,7 @@ public class AkrotiriScreen extends AppCompatActivity {
     private Button mainmenu_btn, booknow;
     private EditText editDate, editPeople, editEmail, editExtra;
     private SharedPreferences database;
-
-
+    private int count = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,7 +85,14 @@ public class AkrotiriScreen extends AppCompatActivity {
         akrotiri_ruins.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                akrotiri_ruins.setImageResource(R.drawable.akrotiri3);
+                count++;
+                if (count==1){
+                    akrotiri_ruins.setImageResource(R.drawable.akrotiri1);
+                }
+                if (count==2){
+                    akrotiri_ruins.setImageResource(R.drawable.akrotiri2);
+                    count=0;
+                }
             }
         });
 
@@ -92,8 +100,57 @@ public class AkrotiriScreen extends AppCompatActivity {
         akrotiri_lighthouse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                akrotiri_lighthouse.setImageResource(R.drawable.akrotiri4);
+                count++;
+                if(count==1){
+                    akrotiri_lighthouse.setImageResource(R.drawable.akrotiri3);
+                }
+                if (count==2){
+                    akrotiri_lighthouse.setImageResource(R.drawable.akrotiri4);
+                    count = 0;
+                }
             }
         });
+    }
+
+    // Show menu tab on first screen
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_activity, menu);
+        return true;
+    }
+
+    // Perform action when menu item selected
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.mapMenu) {
+            Intent i = new Intent(AkrotiriScreen.this, MapScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.mainMenu) {
+            Intent i = new Intent(AkrotiriScreen.this, MenuScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.transportMenu) {
+            Intent i = new Intent(AkrotiriScreen.this, TransportScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.beachMenu) {
+            Intent i = new Intent(AkrotiriScreen.this, BeachScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.tipsMenu) {
+            Intent i = new Intent(AkrotiriScreen.this, TipsScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.adventureMenu) {
+            Intent i = new Intent(AkrotiriScreen.this, AdventureScreen.class);
+            startActivity(i);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

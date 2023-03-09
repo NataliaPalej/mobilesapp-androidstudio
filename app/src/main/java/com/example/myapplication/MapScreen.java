@@ -5,9 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import java.util.Map;
 
 public class MapScreen extends AppCompatActivity {
 
@@ -39,5 +43,47 @@ public class MapScreen extends AppCompatActivity {
                 startActivity(i);
             }
         });
+    }
+
+    // Show menu tab on first screen
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_activity, menu);
+        return true;
+    }
+
+    // Perform action when menu item selected
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.mapMenu) {
+            Intent i = new Intent(MapScreen.this, MapScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.mainMenu) {
+            Intent i = new Intent(MapScreen.this, MenuScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.transportMenu) {
+            Intent i = new Intent(MapScreen.this, TransportScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.beachMenu) {
+            Intent i = new Intent(MapScreen.this, BeachScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.tipsMenu) {
+            Intent i = new Intent(MapScreen.this, TipsScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.adventureMenu) {
+            Intent i = new Intent(MapScreen.this, AdventureScreen.class);
+            startActivity(i);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
