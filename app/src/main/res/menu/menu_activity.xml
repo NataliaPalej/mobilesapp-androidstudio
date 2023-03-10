@@ -25,13 +25,18 @@
 
     <item
         android:id="@+id/mainMenu"
+        android:icon="@drawable/mainmenu"
+        android:iconTint="#FFFFFF"
         android:orderInCategory="1"
+        android:visible="true"
         andorid:icon="@drawable/mainmenu"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/contactMenu"
+        android:icon="@drawable/contactus"
         android:orderInCategory="2"
+        android:visible="true"
         andorid:icon="@drawable/contactus"
         app:showAsAction="ifRoom" />
 

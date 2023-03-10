@@ -16,36 +16,36 @@
         android:background="#4CAF50"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="+@drawable/smspic" />
+        app:srcCompat="@drawable/smspic" />
 
     <ImageView
         android:id="@+id/id_email"
         android:layout_width="158dp"
         android:layout_height="149dp"
-        android:layout_marginStart="140dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="152dp"
         android:background="#4CAF50"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="+@drawable/emailpic" />
+        app:srcCompat="@drawable/emailpic" />
 
     <Button
         android:id="@+id/menubtn11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#2196F3"
         android:text="MENU"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="158dp"
         android:layout_height="25dp"
-        android:layout_marginStart="140dp"
+        android:layout_marginStart="32dp"
         android:background="#2196F3"
         android:text="SEND AN EMAIL"
         android:textAlignment="center"

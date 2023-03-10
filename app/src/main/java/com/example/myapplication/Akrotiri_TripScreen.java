@@ -38,20 +38,18 @@ public class Akrotiri_TripScreen extends AppCompatActivity {
 
             tripDetails.setText(bookingDetails);
 
+            detailsBtn = findViewById(R.id.detailsBtn);
+            detailsBtn.setOnClickListener(view -> {
+                database = getApplicationContext().getSharedPreferences("table_store_text", MODE_PRIVATE);
+                //String bookingSaved = database.getString("Booking Successful", null);
+                Toast.makeText(Akrotiri_TripScreen.this, bookingDetails, Toast.LENGTH_SHORT).show();
+            });
+
         } catch (RuntimeException e) {
             e.printStackTrace();
         }
 
-        // Retrieve booking from database -- to be fixed as not showing up --
-        detailsBtn = findViewById(R.id.detailsBtn);
-        detailsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                database = getApplicationContext().getSharedPreferences("table_store_text", MODE_PRIVATE);
-                String bookingSaved = database.getString("Booking Successful", null);
-                Toast.makeText(Akrotiri_TripScreen.this, bookingSaved, Toast.LENGTH_SHORT).show();
-            }
-        });
+
 
         menu_btn2 = findViewById(R.id.menu_btn2);
         menu_btn2.setOnClickListener(new View.OnClickListener() {
