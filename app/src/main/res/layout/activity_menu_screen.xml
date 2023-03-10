@@ -10,8 +10,8 @@
     <Button
         android:id="@+id/btn1"
         android:layout_width="0dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="24dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="140dp"
         android:backgroundTint="#2196F3"
         android:text="Transport"
         android:textColor="@color/white"
@@ -25,7 +25,6 @@
         android:id="@+id/btn3"
         android:layout_width="0dp"
         android:layout_height="58dp"
-        android:layout_marginTop="10dp"
         android:backgroundTint="#2196F3"
         android:text="Adventures"
         android:textColor="@color/white"
@@ -38,8 +37,7 @@
     <Button
         android:id="@+id/btn4"
         android:layout_width="0dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="60dp"
         android:backgroundTint="#2196F3"
         android:text="Beaches"
         android:textColor="@color/white"
@@ -56,16 +54,15 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:alpha="0.8"
-        android:background="#FFFFFF"
+        android:background="#4CAF50"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/leftarrowblue" />
+        app:srcCompat="@drawable/closeapp" />
 
     <Button
         android:id="@+id/btn6"
         android:layout_width="0dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="60dp"
         android:backgroundTint="#2196F3"
         android:text="SANTORINI TIPS"
         android:textAlignment="center"
@@ -79,8 +76,7 @@
     <Button
         android:id="@+id/btn2"
         android:layout_width="0dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="11dp"
+        android:layout_height="60dp"
         android:backgroundTint="#2196F3"
         android:text="Trip Route Map"
         android:textAlignment="center"
@@ -89,5 +85,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn6" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/santorinil" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="-20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        app:srcCompat="@drawable/guidel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,33 +5,34 @@
 
     <item android:id="@+id/transportMenu"
         android:title="Transport"
-        android:orderInCategory="3"
+        android:orderInCategory="4"
         app:showAsAction="never" />
 
     <item android:id="@+id/beachMenu"
         android:title="Beaches"
-        android:orderInCategory="3"
+        android:orderInCategory="4"
         app:showAsAction="never" />
 
     <item android:id="@+id/adventureMenu"
         android:title="Adventures"
-        android:orderInCategory="3"
+        android:orderInCategory="4"
         app:showAsAction="never" />
 
     <item android:id="@+id/tipsMenu"
         android:title="Santorini Tips"
-        android:orderInCategory="3"
+        android:orderInCategory="4"
         app:showAsAction="never" />
 
-    <item android:id="@+id/mainMenu"
-        android:title="Main Menu"
-        android:orderInCategory="2"
-        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/mainMenu"
+        android:orderInCategory="1"
+        andorid:icon="@drawable/mainmenu"
+        app:showAsAction="always" />
 
     <item
-        android:id="@+id/mapMenu"
-        android:orderInCategory="1"
-        andorid:icon="@drawable/map_vector"
+        android:id="@+id/contactMenu"
+        android:orderInCategory="2"
+        andorid:icon="@drawable/contactus"
         app:showAsAction="ifRoom" />
 
 </menu>

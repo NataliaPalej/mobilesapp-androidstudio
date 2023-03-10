@@ -149,7 +149,7 @@
         android:layout_height="46dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="128dp"
-        android:background="#F80707"
+        android:background="#4CAF50"
         android:text="CALL FOR MORE INFO"
         android:textAlignment="center"
         android:textColor="@color/white"

@@ -75,6 +75,10 @@ public class MenuScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
+                Intent i = new Intent(Intent.ACTION_MAIN);
+                i.addCategory(Intent.CATEGORY_HOME);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(i);
                 System.exit(0);
             }
         });
@@ -89,8 +93,8 @@ public class MenuScreen extends AppCompatActivity {
     // Perform action when menu item selected
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.mapMenu) {
-            Intent i = new Intent(MenuScreen.this, MapScreen.class);
+        if (id == R.id.contactMenu) {
+            Intent i = new Intent(MenuScreen.this, ContactScreen.class);
             startActivity(i);
             return true;
         }

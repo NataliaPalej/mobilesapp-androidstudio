@@ -38,8 +38,8 @@ public class TipsScreen extends AppCompatActivity {
     // Perform action when menu item selected
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.mapMenu) {
-            Intent i = new Intent(TipsScreen.this, MapScreen.class);
+        if (id == R.id.contactMenu) {
+            Intent i = new Intent(TipsScreen.this, ContactScreen.class);
             startActivity(i);
             return true;
         }

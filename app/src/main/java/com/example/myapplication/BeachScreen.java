@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,9 +17,10 @@ public class BeachScreen extends AppCompatActivity {
 
     private ConstraintLayout cons_layout;
     //Back button
-    private ImageView btn;
+    private ImageView btn, soundbtn;
     // Radio buttons for different beaches
     private RadioButton radio1, radio2, radio3, radio4;
+    private int count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +74,24 @@ public class BeachScreen extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        // Sound Effect
+        soundbtn = findViewById(R.id.soundbtn);
+        soundbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                count++;
+                if (count == 1){
+                    MediaPlayer mp = MediaPlayer.create(BeachScreen.this, R.raw.seawaves);
+                    mp.start();
+                }
+                if (count == 2){
+                    MediaPlayer mp = MediaPlayer.create(BeachScreen.this, R.raw.seawaves);
+                    mp.stop();
+                    count = 0;
+                }
+            }
+        });
     }
 
     // Show menu tab on first screen
@@ -83,8 +103,8 @@ public class BeachScreen extends AppCompatActivity {
     // Perform action when menu item selected
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.mapMenu) {
-            Intent i = new Intent(BeachScreen.this, MapScreen.class);
+        if (id == R.id.contactMenu) {
+            Intent i = new Intent(BeachScreen.this, ContactScreen.class);
             startActivity(i);
             return true;
         }

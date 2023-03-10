@@ -11,14 +11,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-public class SignUpScreen extends AppCompatActivity {
+public class ContactScreen extends AppCompatActivity {
     private ImageView id_email, id_sms;
     private Button menubtn11;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up_screen);
+        setContentView(R.layout.activity_contact_screen);
 
         id_email = findViewById(R.id.id_email);
         id_sms = findViewById(R.id.id_sms);
@@ -29,8 +29,8 @@ public class SignUpScreen extends AppCompatActivity {
             public void onClick(View v) {
                 Intent email = new Intent(Intent.ACTION_SEND);
                 email.putExtra(Intent.EXTRA_EMAIL, new String[]{"email@address.ie"});
-                email.putExtra(Intent.EXTRA_SUBJECT, "Welcome to my app!");
-                email.putExtra(Intent.EXTRA_TEXT, "Your sign-up was successful!");
+                email.putExtra(Intent.EXTRA_SUBJECT, "SantoriniGuide Querry");
+                email.putExtra(Intent.EXTRA_TEXT, "[type_in_your_question_here]");
                 email.setType("message/rfc822");
                 startActivity(Intent.createChooser(email, "Send Mail Using :"));
             }
@@ -41,7 +41,7 @@ public class SignUpScreen extends AppCompatActivity {
             public void onClick(View v) {
                 Uri uri = Uri.parse("smsto:0123456789");
                 Intent msg = new Intent(Intent.ACTION_SENDTO, uri);
-                msg.putExtra("sms_body", "Your booking reference is #125874");
+                msg.putExtra("sms_body", "Write_Your_Txt_Here");
                 startActivity(Intent.createChooser(msg, "Send sms Using :"));
             }
         });
@@ -50,7 +50,7 @@ public class SignUpScreen extends AppCompatActivity {
         menubtn11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(SignUpScreen.this, MenuScreen.class);
+                Intent i = new Intent(ContactScreen.this, MenuScreen.class);
                 startActivity(i);
             }
         });
@@ -65,33 +65,33 @@ public class SignUpScreen extends AppCompatActivity {
     // Perform action when menu item selected
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.mapMenu) {
-            Intent i = new Intent(SignUpScreen.this, MapScreen.class);
-            startActivity(i);
-            return true;
-        }
         if (id == R.id.mainMenu) {
-            Intent i = new Intent(SignUpScreen.this, MenuScreen.class);
+            Intent i = new Intent(ContactScreen.this, MenuScreen.class);
             startActivity(i);
             return true;
         }
         if (id == R.id.transportMenu) {
-            Intent i = new Intent(SignUpScreen.this, TransportScreen.class);
+            Intent i = new Intent(ContactScreen.this, TransportScreen.class);
             startActivity(i);
             return true;
         }
         if (id == R.id.beachMenu) {
-            Intent i = new Intent(SignUpScreen.this, BeachScreen.class);
+            Intent i = new Intent(ContactScreen.this, BeachScreen.class);
             startActivity(i);
             return true;
         }
         if (id == R.id.tipsMenu) {
-            Intent i = new Intent(SignUpScreen.this, TipsScreen.class);
+            Intent i = new Intent(ContactScreen.this, TipsScreen.class);
             startActivity(i);
             return true;
         }
         if (id == R.id.adventureMenu) {
-            Intent i = new Intent(SignUpScreen.this, AdventureScreen.class);
+            Intent i = new Intent(ContactScreen.this, AdventureScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.contactMenu) {
+            Intent i = new Intent(ContactScreen.this, ContactScreen.class);
             startActivity(i);
             return true;
         }
