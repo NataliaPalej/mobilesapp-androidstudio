@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.graphics.HardwareRenderer;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Menu;
@@ -85,7 +86,7 @@ public class BeachScreen extends AppCompatActivity {
         });
     }
 
-    // Show menu tab on first screen
+    // Show menu tab on screen
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_activity, menu);
         return true;

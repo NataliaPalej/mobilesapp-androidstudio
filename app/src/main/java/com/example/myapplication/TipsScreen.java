@@ -29,7 +29,7 @@ public class TipsScreen extends AppCompatActivity {
         });
     }
 
-    // Show menu tab on first screen
+    // Show menu tab on screen
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_activity, menu);
         return true;
