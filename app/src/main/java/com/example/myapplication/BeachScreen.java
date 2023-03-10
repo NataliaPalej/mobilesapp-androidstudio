@@ -20,8 +20,7 @@ public class BeachScreen extends AppCompatActivity {
     private ImageView btn, soundbtn;
     // Radio buttons for different beaches
     private RadioButton radio1, radio2, radio3, radio4;
-    private int count;
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,16 +79,8 @@ public class BeachScreen extends AppCompatActivity {
         soundbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                count++;
-                if (count == 1){
-                    MediaPlayer mp = MediaPlayer.create(BeachScreen.this, R.raw.seawaves);
-                    mp.start();
-                }
-                if (count == 2){
-                    MediaPlayer mp = MediaPlayer.create(BeachScreen.this, R.raw.seawaves);
-                    mp.stop();
-                    count = 0;
-                }
+                MediaPlayer mp = MediaPlayer.create(BeachScreen.this, R.raw.seawaves);
+                mp.start();
             }
         });
     }

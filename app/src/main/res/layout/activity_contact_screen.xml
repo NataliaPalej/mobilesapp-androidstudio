@@ -14,10 +14,9 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="340dp"
         android:background="#4CAF50"
-        android:src="@tools:sample/avatars"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/smspic" />
+        tools:srcCompat="+@drawable/smspic" />
 
     <ImageView
         android:id="@+id/id_email"
@@ -28,7 +27,7 @@
         android:background="#4CAF50"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/emailpic" />
+        tools:srcCompat="+@drawable/emailpic" />
 
     <Button
         android:id="@+id/menubtn11"
