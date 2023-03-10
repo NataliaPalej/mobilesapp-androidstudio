@@ -8,12 +8,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class SignUpScreen extends AppCompatActivity {
-
-    // TODO -> create id_email and id_sms image view on activity_sign_up_screen
     private ImageView id_email, id_sms;
+    private Button menubtn11;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,14 +22,15 @@ public class SignUpScreen extends AppCompatActivity {
 
         id_email = findViewById(R.id.id_email);
         id_sms = findViewById(R.id.id_sms);
+        menubtn11 = findViewById(R.id.menubtn11);
 
         id_email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent email = new Intent(Intent.ACTION_SEND);
-                email.putExtra(Intent.EXTRA_EMAIL, new String[]{"tom@ait.ie"});
-                email.putExtra(Intent.EXTRA_SUBJECT, "Hello from my app");
-                email.putExtra(Intent.EXTRA_TEXT, "Bla bla Bla bla  Bla bla  Bla bla  Bla bla ");
+                email.putExtra(Intent.EXTRA_EMAIL, new String[]{"email@address.ie"});
+                email.putExtra(Intent.EXTRA_SUBJECT, "Welcome to my app!");
+                email.putExtra(Intent.EXTRA_TEXT, "Your sign-up was successful!");
                 email.setType("message/rfc822");
                 startActivity(Intent.createChooser(email, "Send Mail Using :"));
             }
@@ -38,10 +39,19 @@ public class SignUpScreen extends AppCompatActivity {
         id_sms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("smsto:2345612345");
+                Uri uri = Uri.parse("smsto:0123456789");
                 Intent msg = new Intent(Intent.ACTION_SENDTO, uri);
-                msg.putExtra("sms_body", "The SMS text");
+                msg.putExtra("sms_body", "Your booking reference is #125874");
                 startActivity(Intent.createChooser(msg, "Send sms Using :"));
+            }
+        });
+
+        // Menu Button
+        menubtn11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(SignUpScreen.this, MenuScreen.class);
+                startActivity(i);
             }
         });
     }
