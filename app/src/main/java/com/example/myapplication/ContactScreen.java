@@ -28,7 +28,7 @@ public class ContactScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent email = new Intent(Intent.ACTION_SEND);
-                email.putExtra(Intent.EXTRA_EMAIL, new String[]{"email@address.ie"});
+                email.putExtra(Intent.EXTRA_EMAIL, new String[]{"info@santoriniguide.com"});
                 email.putExtra(Intent.EXTRA_SUBJECT, "SantoriniGuide Querry");
                 email.putExtra(Intent.EXTRA_TEXT, "[type_in_your_question_here]");
                 email.setType("message/rfc822");

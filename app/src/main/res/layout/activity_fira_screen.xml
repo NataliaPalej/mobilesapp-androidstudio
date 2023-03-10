@@ -55,7 +55,6 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:alpha="0.85"
             android:background="@color/white">
 
             <TextView
@@ -67,23 +66,6 @@
                 android:textSize="16sp" />
         </ScrollView>
 
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="200dp"
-        android:layout_height="145dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="550dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/firaPictures"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="Fira Images"
-            app:srcCompat="@drawable/fira1" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView

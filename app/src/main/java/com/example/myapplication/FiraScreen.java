@@ -12,7 +12,7 @@ import android.widget.ImageView;
 
 public class FiraScreen extends AppCompatActivity {
 
-    private ImageView previous, next, firaPictures, firaMap;
+    private ImageView previous, next, firaPictures;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,7 @@ public class FiraScreen extends AppCompatActivity {
             }
         });
 
-        // Iterate through Fira pictures
+        /** Iterate through Fira pictures
         firaPictures = findViewById(R.id.firaPictures);
         firaPictures.setOnClickListener(new View.OnClickListener() {
             int count = 0;
@@ -74,6 +74,7 @@ public class FiraScreen extends AppCompatActivity {
                 }
             }
         });
+            **/
     }
 
     // Show menu tab on screen
