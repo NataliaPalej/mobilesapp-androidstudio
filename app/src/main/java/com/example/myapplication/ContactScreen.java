@@ -24,26 +24,20 @@ public class ContactScreen extends AppCompatActivity {
         id_sms = findViewById(R.id.id_sms);
         menubtn11 = findViewById(R.id.menubtn11);
 
-        id_email.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent email = new Intent(Intent.ACTION_SEND);
-                email.putExtra(Intent.EXTRA_EMAIL, new String[]{"info@santoriniguide.com"});
-                email.putExtra(Intent.EXTRA_SUBJECT, "SantoriniGuide Querry");
-                email.putExtra(Intent.EXTRA_TEXT, "[type_in_your_question_here]");
-                email.setType("message/rfc822");
-                startActivity(Intent.createChooser(email, "Send Mail Using :"));
-            }
+        id_email.setOnClickListener(v -> {
+            Intent email = new Intent(Intent.ACTION_SEND);
+            email.putExtra(Intent.EXTRA_EMAIL, new String[]{"info@santoriniguide.com"});
+            email.putExtra(Intent.EXTRA_SUBJECT, "SantoriniGuide Querry");
+            email.putExtra(Intent.EXTRA_TEXT, "[type_in_your_question_here]");
+            email.setType("message/rfc822");
+            startActivity(Intent.createChooser(email, "Send Mail Using :"));
         });
 
-        id_sms.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Uri uri = Uri.parse("smsto:0123456789");
-                Intent msg = new Intent(Intent.ACTION_SENDTO, uri);
-                msg.putExtra("sms_body", "Write_Your_Txt_Here");
-                startActivity(Intent.createChooser(msg, "Send sms Using :"));
-            }
+        id_sms.setOnClickListener(v -> {
+            Uri uri = Uri.parse("smsto:0123456789");
+            Intent msg = new Intent(Intent.ACTION_SENDTO, uri);
+            msg.putExtra("sms_body", "Write_Your_Txt_Here");
+            startActivity(Intent.createChooser(msg, "Send sms Using :"));
         });
 
         // Menu Button
