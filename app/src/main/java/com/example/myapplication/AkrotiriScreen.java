@@ -79,6 +79,22 @@ public class AkrotiriScreen extends AppCompatActivity {
                 i.putExtra("TextToSend4", extra);
 
                 startActivity(i);
+
+                startActivity(i);
+
+                // store the booking
+                database = getApplicationContext().getSharedPreferences("table_store_text", MODE_PRIVATE);
+                SharedPreferences.Editor editor = database.edit();
+                String txt1 = editDate.getText().toString();
+                editor.putString("Date: ", txt1);
+                String txt2 = editPeople.getText().toString();
+                editor.putString("Number of People: ", txt2);
+                String txt3 = editEmail.getText().toString();
+                editor.putString("Email: ", txt3);
+                String txt4 = editExtra.getText().toString();
+                editor.putString("Extra Info: ", txt4);
+                editor.commit();
+                Toast.makeText(AkrotiriScreen.this, "Booking Completed", Toast.LENGTH_SHORT).show();
             }
         });
 
