@@ -47,8 +47,6 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="80dp"
         android:alpha="0.9"
-        android:background="@color/white"
-        android:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -141,41 +139,44 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textAlignment="center"
-                        android:textColor="#100D0D"
+                        android:textColor="#FFFFFF"
                         android:textSize="20sp" />
 
                     <EditText
                         android:id="@+id/editPeople"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="#CD1B1B"
                         android:ems="10"
+                        android:hint="No of people"
                         android:inputType="text"
                         android:singleLine="true"
-                        android:text="No of people"
                         android:textAlignment="center"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/white" />
 
                     <EditText
                         android:id="@+id/editEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="#CD1B1B"
                         android:ems="10"
+                        android:hint="your@email.com"
                         android:inputType="text|textEmailAddress"
                         android:singleLine="true"
-                        android:text="your@email.com"
                         android:textAlignment="center"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="14sp" />
 
                     <EditText
                         android:id="@+id/editExtra"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="#CD1B1B"
                         android:ems="10"
+                        android:hint="Extra Info"
                         android:inputType="text"
-                        android:text="Extra Info"
                         android:textAlignment="center"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/white" />
 
                     <Button
                         android:id="@+id/booknow"
