@@ -23,6 +23,11 @@
         android:orderInCategory="4"
         app:showAsAction="never" />
 
+    <item android:id="@+id/restaurantsMenu"
+        android:title="Restaurants"
+        android:orderInCategory="4"
+        app:showAsAction="never" />
+
     <item android:id="@+id/todoMenu"
         android:title="TO DO List"
         android:orderInCategory="4"

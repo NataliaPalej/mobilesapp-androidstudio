@@ -104,6 +104,11 @@ public class MyToDoScreen extends AppCompatActivity {
             startActivity(i);
             return true;
         }
+        if (id == R.id.restaurantsMenu){
+            Intent i = new Intent(MyToDoScreen.this, RestaurantsScreen.class);
+            startActivity(i);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }

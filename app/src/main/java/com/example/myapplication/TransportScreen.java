@@ -164,6 +164,11 @@ public class TransportScreen extends AppCompatActivity {
             startActivity(i);
             return true;
         }
+        if (id == R.id.restaurantsMenu){
+            Intent i = new Intent(TransportScreen.this, RestaurantsScreen.class);
+            startActivity(i);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }

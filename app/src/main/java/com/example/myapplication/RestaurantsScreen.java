@@ -6,27 +6,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 
-public class TipsScreen extends AppCompatActivity {
+// TODO simple list to be implemented
+// https://www.youtube.com/watch?v=gGCkHopziSg&ab_channel=2023-Android
 
-    private Button menu_btn3;
+public class RestaurantsScreen extends AppCompatActivity {
+
+    private Button backBtn11;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tips_screen);
-
-        // Back Button
-        menu_btn3 = findViewById(R.id.menu_btn3);
-        menu_btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(TipsScreen.this, MenuScreen.class);
-                startActivity(i);
-            }
-        });
+        setContentView(R.layout.activity_restaurants_screen);
     }
 
     // Show menu tab on screen
@@ -39,42 +31,42 @@ public class TipsScreen extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.contactMenu) {
-            Intent i = new Intent(TipsScreen.this, ContactScreen.class);
+            Intent i = new Intent(RestaurantsScreen.this, ContactScreen.class);
             startActivity(i);
             return true;
         }
         if (id == R.id.mainMenu) {
-            Intent i = new Intent(TipsScreen.this, MenuScreen.class);
+            Intent i = new Intent(RestaurantsScreen.this, MenuScreen.class);
             startActivity(i);
             return true;
         }
         if (id == R.id.transportMenu) {
-            Intent i = new Intent(TipsScreen.this, TransportScreen.class);
+            Intent i = new Intent(RestaurantsScreen.this, TransportScreen.class);
             startActivity(i);
             return true;
         }
         if (id == R.id.beachMenu) {
-            Intent i = new Intent(TipsScreen.this, BeachScreen.class);
+            Intent i = new Intent(RestaurantsScreen.this, BeachScreen.class);
             startActivity(i);
             return true;
         }
         if (id == R.id.tipsMenu) {
-            Intent i = new Intent(TipsScreen.this, TipsScreen.class);
+            Intent i = new Intent(RestaurantsScreen.this, TipsScreen.class);
             startActivity(i);
             return true;
         }
         if (id == R.id.adventureMenu) {
-            Intent i = new Intent(TipsScreen.this, AdventureScreen.class);
+            Intent i = new Intent(RestaurantsScreen.this, AdventureScreen.class);
             startActivity(i);
             return true;
         }
         if (id == R.id.todoMenu) {
-            Intent i = new Intent(TipsScreen.this, MyToDoScreen.class);
+            Intent i = new Intent(RestaurantsScreen.this, MyToDoScreen.class);
             startActivity(i);
             return true;
         }
         if (id == R.id.restaurantsMenu){
-            Intent i = new Intent(TipsScreen.this, RestaurantsScreen.class);
+            Intent i = new Intent(RestaurantsScreen.this, RestaurantsScreen.class);
             startActivity(i);
             return true;
         }
