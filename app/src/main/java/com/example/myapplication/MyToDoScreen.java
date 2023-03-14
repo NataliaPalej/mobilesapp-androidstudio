@@ -9,12 +9,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MyToDoScreen extends AppCompatActivity {
 
     private Button saveDetails, showDetails;
+    private ImageView backButton;
     private TextView todoDetails;
     private SharedPreferences database;
 
@@ -26,6 +28,7 @@ public class MyToDoScreen extends AppCompatActivity {
         saveDetails = findViewById(R.id.saveDetails);
         showDetails = findViewById(R.id.showDetails);
         todoDetails = findViewById(R.id.todoDetails);
+        backButton = findViewById(R.id.backButton);
 
         saveDetails.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +48,14 @@ public class MyToDoScreen extends AppCompatActivity {
                 database = getApplicationContext().getSharedPreferences("table_store_text", MODE_PRIVATE);
                 String todoList = database.getString("key_saved_text", null);
                 Toast.makeText(MyToDoScreen.this, todoList, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MyToDoScreen.this, MenuScreen.class);
+                startActivity(i);
             }
         });
     }
