@@ -28,6 +28,7 @@ public class OiaScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(OiaScreen.this, AkrotiriScreen.class);
                 startActivity(i);
+                overridePendingTransition(R.transition.slideinright,R.transition.slideinleft);
             }
         });
 
@@ -37,6 +38,7 @@ public class OiaScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(OiaScreen.this, FiraScreen.class);
                 startActivity(i);
+                overridePendingTransition(R.transition.slideleft,R.transition.slideright);
             }
         });
 

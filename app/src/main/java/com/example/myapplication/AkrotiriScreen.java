@@ -34,6 +34,7 @@ public class AkrotiriScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(AkrotiriScreen.this, OiaScreen.class);
                 startActivity(i);
+                overridePendingTransition(R.transition.slideleft,R.transition.slideright);
             }
         });
 

@@ -25,6 +25,7 @@ public class FiraScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(FiraScreen.this, OiaScreen.class);
                 startActivity(i);
+                overridePendingTransition(R.transition.slideinright,R.transition.slideinleft);
             }
         });
 
@@ -34,6 +35,7 @@ public class FiraScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(FiraScreen.this, AdventureScreen.class);
                 startActivity(i);
+                overridePendingTransition(R.transition.slideleft,R.transition.slideright);
             }
         });
 

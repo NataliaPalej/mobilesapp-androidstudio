@@ -28,6 +28,7 @@ public class AdventureScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(AdventureScreen.this, MenuScreen.class);
                 startActivity(i);
+                overridePendingTransition(R.transition.slideleft,R.transition.slideright);
             }
         });
 
@@ -37,6 +38,7 @@ public class AdventureScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(AdventureScreen.this, FiraScreen.class);
                 startActivity(i);
+                overridePendingTransition(R.transition.slideinright,R.transition.slideinleft);
             }
         });
 

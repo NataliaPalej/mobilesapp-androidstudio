@@ -65,6 +65,7 @@ public class Akrotiri_TripScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(Akrotiri_TripScreen.this, AkrotiriScreen.class);
                 startActivity(i);
+                overridePendingTransition(R.transition.slideleft,R.transition.slideright);
             }
         });
     }
