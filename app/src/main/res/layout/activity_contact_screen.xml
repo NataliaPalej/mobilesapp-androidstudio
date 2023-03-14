@@ -57,7 +57,7 @@
     <TextView
         android:id="@+id/textView10"
         android:layout_width="158dp"
-        android:layout_height="0dp"
+        android:layout_height="25dp"
         android:layout_marginStart="32dp"
         android:background="#2196F3"
         android:text="SEND SMS QUERY"
@@ -103,8 +103,8 @@
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="159dp"
-        android:layout_height="0dp"
+        android:layout_width="158dp"
+        android:layout_height="25dp"
         android:layout_marginEnd="36dp"
         android:background="#2196F3"
         android:text="BOOKING DETAILS"
@@ -113,8 +113,6 @@
         android:textColor="@color/white"
         android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textView9"
         app:layout_constraintTop_toBottomOf="@+id/id_details" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

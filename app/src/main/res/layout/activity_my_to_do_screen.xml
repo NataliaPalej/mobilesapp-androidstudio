@@ -7,4 +7,62 @@
     android:background="@drawable/phone1"
     tools:context=".MyToDoScreen">
 
+    <Button
+        android:id="@+id/saveDetails"
+        android:layout_width="301dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="48dp"
+        android:backgroundTint="#2196F3"
+        android:text="SAVE LIST"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/todoDetails" />
+
+    <Button
+        android:id="@+id/showDetails"
+        android:layout_width="301dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="48dp"
+        android:backgroundTint="#2196F3"
+        android:text="SHOW MY TODO LIST"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saveDetails" />
+
+    <EditText
+        android:id="@+id/todoDetails"
+        android:layout_width="301dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="196dp"
+        android:layout_marginEnd="48dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="311dp"
+        android:layout_height="96dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/todologo" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="225dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/listlogo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
