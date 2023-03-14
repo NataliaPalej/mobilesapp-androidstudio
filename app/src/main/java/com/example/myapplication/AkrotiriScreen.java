@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,16 +9,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class AkrotiriScreen extends AppCompatActivity {
     private ImageView backbtn_4, akrotiri_ruins, akrotiri_lighthouse;
     private Button mainmenu_btn, booknow;
-    private EditText editDate, editPeople, editEmail, editExtra;
+    private EditText editPeople, editEmail, editExtra;
     private SharedPreferences database;
     private int count = 0;
+    CalendarView calendarView;
+    private TextView editDate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,8 +46,19 @@ public class AkrotiriScreen extends AppCompatActivity {
             }
         });
 
-        booknow = findViewById(R.id.booknow);
+        calendarView = findViewById(R.id.calendarView);
         editDate = findViewById(R.id.editDate);
+
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int day) {
+                // Month starts as zero, hence why we add 1 to it
+                String fullDate = day + "/" + (month+1) + "/" + year;
+                editDate.setText(fullDate);
+            }
+        });
+
+        booknow = findViewById(R.id.booknow);
         editPeople = findViewById(R.id.editPeople);
         editEmail = findViewById(R.id.editEmail);
         editExtra = findViewById(R.id.editExtra);
@@ -62,21 +78,6 @@ public class AkrotiriScreen extends AppCompatActivity {
                 i.putExtra("TextToSend4", extra);
 
                 startActivity(i);
-
-                // store the booking
-                database = getApplicationContext().getSharedPreferences("table_store_text", MODE_PRIVATE);
-                SharedPreferences.Editor editor = database.edit();
-                String txt1 = editDate.getText().toString();
-                editor.putString("Date: ", txt1);
-                String txt2 = editPeople.getText().toString();
-                editor.putString("Number of People: ", txt2);
-                String txt3 = editEmail.getText().toString();
-                editor.putString("Email: ", txt3);
-                String txt4 = editExtra.getText().toString();
-                editor.putString("Extra Info: ", txt4);
-                editor.commit();
-                Toast.makeText(AkrotiriScreen.this, "Booking Completed", Toast.LENGTH_SHORT).show();
-
             }
         });
 
@@ -148,6 +149,11 @@ public class AkrotiriScreen extends AppCompatActivity {
         }
         if (id == R.id.adventureMenu) {
             Intent i = new Intent(AkrotiriScreen.this, AdventureScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.todoMenu) {
+            Intent i = new Intent(AkrotiriScreen.this, MyToDoScreen.class);
             startActivity(i);
             return true;
         }

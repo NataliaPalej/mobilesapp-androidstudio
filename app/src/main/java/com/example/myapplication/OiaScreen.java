@@ -127,6 +127,11 @@ public class OiaScreen extends AppCompatActivity {
             startActivity(i);
             return true;
         }
+        if (id == R.id.todoMenu) {
+            Intent i = new Intent(OiaScreen.this, MyToDoScreen.class);
+            startActivity(i);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }

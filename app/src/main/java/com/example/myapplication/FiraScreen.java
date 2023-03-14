@@ -116,6 +116,11 @@ public class FiraScreen extends AppCompatActivity {
             startActivity(i);
             return true;
         }
+        if (id == R.id.todoMenu) {
+            Intent i = new Intent(FiraScreen.this, MyToDoScreen.class);
+            startActivity(i);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }

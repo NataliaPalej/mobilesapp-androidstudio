@@ -104,4 +104,18 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView7"
         app:srcCompat="@drawable/guidel" />
 
+    <Button
+        android:id="@+id/myToDo"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#2196F3"
+        android:text="MY TO DO LIST"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:iconTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

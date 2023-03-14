@@ -108,6 +108,11 @@ public class Akrotiri_TripScreen extends AppCompatActivity {
             startActivity(i);
             return true;
         }
+        if (id == R.id.todoMenu) {
+            Intent i = new Intent(Akrotiri_TripScreen.this, MyToDoScreen.class);
+            startActivity(i);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }

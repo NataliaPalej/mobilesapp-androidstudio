@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class ContactScreen extends AppCompatActivity {
-    private ImageView id_email, id_sms;
+    private ImageView id_email, id_sms, id_details;
     private Button menubtn11;
 
     @Override
@@ -38,6 +38,16 @@ public class ContactScreen extends AppCompatActivity {
             Intent msg = new Intent(Intent.ACTION_SENDTO, uri);
             msg.putExtra("sms_body", "Write_Your_Txt_Here");
             startActivity(Intent.createChooser(msg, "Send sms Using :"));
+        });
+
+        // Details Screen
+        id_details = findViewById(R.id.id_details);
+        id_details.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(ContactScreen.this, Akrotiri_TripScreen.class);
+                startActivity(i);
+            }
         });
 
         // Menu Button
@@ -86,6 +96,11 @@ public class ContactScreen extends AppCompatActivity {
         }
         if (id == R.id.contactMenu) {
             Intent i = new Intent(ContactScreen.this, ContactScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.todoMenu) {
+            Intent i = new Intent(ContactScreen.this, MyToDoScreen.class);
             startActivity(i);
             return true;
         }

@@ -125,6 +125,11 @@ public class BeachScreen extends AppCompatActivity {
             startActivity(i);
             return true;
         }
+        if (id == R.id.todoMenu) {
+            Intent i = new Intent(BeachScreen.this, MyToDoScreen.class);
+            startActivity(i);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }

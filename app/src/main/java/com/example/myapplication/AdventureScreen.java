@@ -91,6 +91,11 @@ public class AdventureScreen extends AppCompatActivity {
             startActivity(i);
             return true;
         }
+        if (id == R.id.todoMenu) {
+            Intent i = new Intent(AdventureScreen.this, MyToDoScreen.class);
+            startActivity(i);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }
