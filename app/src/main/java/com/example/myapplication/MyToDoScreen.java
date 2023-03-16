@@ -2,9 +2,12 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,8 +18,9 @@ import android.widget.Toast;
 
 public class MyToDoScreen extends AppCompatActivity {
 
-    private Button saveDetails, showDetails;
-    private ImageView backButton;
+    private static final int REQUEST_IMAGE_CAPTURE = 1;
+    private Button saveDetails, showDetails, cameraBtn;
+    private ImageView backButton, picView;
     private TextView todoDetails;
     private SharedPreferences database;
 
@@ -29,6 +33,8 @@ public class MyToDoScreen extends AppCompatActivity {
         showDetails = findViewById(R.id.showDetails);
         todoDetails = findViewById(R.id.todoDetails);
         backButton = findViewById(R.id.backButton);
+        picView = findViewById(R.id.picView);
+        cameraBtn = findViewById(R.id.cameraBtn);
 
         saveDetails.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +64,28 @@ public class MyToDoScreen extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        cameraBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                try {
+                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+                } catch (ActivityNotFoundException e) {
+                    // display error state to the user
+                }
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            picView.setImageBitmap(imageBitmap);
+        }
     }
 
     // Show menu tab on screen
