@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class MenuScreen extends AppCompatActivity {
-    private Button adventureScreen, beachScreen, mapScreen, transportScreen, tipsScreen, myToDo, restaurants;
+    private Button adventureScreen, beachScreen, mapScreen, transportScreen, tipsScreen, myToDo, restaurantsbtn;
     private ImageView exit;
 
     @Override
@@ -70,8 +70,8 @@ public class MenuScreen extends AppCompatActivity {
         });
 
         // Go to Restaurants Screen
-        restaurants = findViewById(R.id.myToDo);
-        restaurants.setOnClickListener(new View.OnClickListener() {
+        restaurantsbtn = findViewById(R.id.restaurantsbtn);
+        restaurantsbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MenuScreen.this, RestaurantsScreen.class);

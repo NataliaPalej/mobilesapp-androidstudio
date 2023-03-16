@@ -4,26 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/phone13">
-
-    <ImageView
-        android:id="@+id/imageView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/restaurantslogo" />
+    android:background="#051C2E">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:layout_marginTop="100dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/restaurantImg"
+            android:id="@+id/restImg"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_marginLeft="10dp"
@@ -32,7 +24,7 @@
             app:srcCompat="@drawable/fanari" />
 
         <TextView
-            android:id="@+id/restaurantText"
+            android:id="@+id/restTxt"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_marginLeft="30dp"
@@ -42,7 +34,7 @@
             android:text="TextView"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="30sp" />
 
     </androidx.cardview.widget.CardView>
 

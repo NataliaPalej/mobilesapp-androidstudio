@@ -7,19 +7,24 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class RestaurantsScreen extends AppCompatActivity {
 
-    private ImageView backbtn1;
-    private ListView listView;
+    private ImageView backbtn1, restImg;
+    private TextView restTxt;
     private ArrayList<String> restaurantList;
+    private ArrayList<Integer> restaurantImg;
+
+    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,33 +41,59 @@ public class RestaurantsScreen extends AppCompatActivity {
             }
         });
 
-        // TODO: In 3rd App to enhance the listView, restaurant price and rating will display on click
-        // Create List View
+        // Create List View and Image View
         listView = findViewById(R.id.listView);
+
         restaurantList = new ArrayList<>();
-        restaurantList.add("Fanari · €€ · Rating: 4.4");
-        restaurantList.add("Volcano Blue · €€€ · Rating: 4.4");
-        restaurantList.add("Idol Restaurant Bar · €€€ · Rating: 4.2");
-        restaurantList.add("Da Costa · €€ · Rating: 4.3");
-        restaurantList.add("La Scala · €€ · Rating: 4.2");
-        restaurantList.add("Aris Restaurants · unknown · Rating: 4.7");
-        restaurantList.add("La Colline · unknown · Rating: 4.7");
-        restaurantList.add("Lithos · €€ · Rating: 4.0");
-        restaurantList.add("Zafora · €€ · Rating: 3.1");
+        restaurantList.add("Fanari · €€\nRating: 4.4");
+        restaurantList.add("Volcano Blue · €€€\nRating: 4.4");
+        restaurantList.add("Idol Restaurant Bar · €€€\nRating: 4.2");
+        restaurantList.add("Da Costa · €€\nRating: 4.3");
+        restaurantList.add("La Scala · €€\nRating: 4.2");
+        restaurantList.add("Aris Restaurants · unknown\nRating: 4.7");
+        restaurantList.add("La Colline · unknown\nRating: 4.7");
+        restaurantList.add("Lithos · €€\nRating: 4.0");
+        restaurantList.add("Zafora · €€\nRating: 3.1");
 
-        ArrayAdapter<String> restaurantAdapter = new ArrayAdapter<>(
-                this,
-                android.R.layout.simple_list_item_1,
-                restaurantList
-        );
+        restaurantImg = new ArrayList<>();
+        restaurantImg .add(R.drawable.fanari);
+        restaurantImg .add(R.drawable.volcanoblue);
+        restaurantImg .add(R.drawable.idolrestaurantbar);
+        restaurantImg .add(R.drawable.dacosta);
+        restaurantImg .add(R.drawable.lascala);
+        restaurantImg .add(R.drawable.arisrestaurant);
+        restaurantImg .add(R.drawable.lacolline);
+        restaurantImg .add(R.drawable.lithos);
+        restaurantImg .add(R.drawable.zafora);
 
-        listView.setAdapter(restaurantAdapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick (AdapterView < ? > adapterView, View view,int i, long l){
-                Toast.makeText(RestaurantsScreen.this, restaurantList.get(i), Toast.LENGTH_SHORT).show();
-            }
-        });
+        MyAdapter adapter = new MyAdapter();
+        listView.setAdapter(adapter);
+    }
+
+    public class MyAdapter extends BaseAdapter {
+        @Override
+        public int getCount() {
+            return restaurantImg.size();  //added this
+        }
+        @Override
+        public Object getItem(int i) {
+            return null;
+        }
+        @Override
+        public long getItemId(int i) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int i, View view, ViewGroup viewGroup) {
+            view = getLayoutInflater().inflate(R.layout.restaurants_list, viewGroup, false);
+            ImageView myImageView = view.findViewById(R.id.restImg);
+            TextView myTextView = view.findViewById(R.id.restTxt);
+
+            myImageView.setImageResource(restaurantImg.get(i));
+            myTextView.setText(restaurantList.get(i));
+            return view;
+        }
     }
 
     // Show menu tab on screen
