@@ -12,12 +12,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ViewFlipper;
 
 public class Akrotiri_TripScreen extends AppCompatActivity {
 
     private TextView tripDetails;
-    private ImageView back_btn2;
+    private ImageView back_btn2, nextImg, backImg;
     private Button menu_btn2, detailsBtn;
+    private ViewFlipper flipImg;
     private SharedPreferences database;
 
     @Override
@@ -49,8 +51,6 @@ public class Akrotiri_TripScreen extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
-
         menu_btn2 = findViewById(R.id.menu_btn2);
         menu_btn2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +66,28 @@ public class Akrotiri_TripScreen extends AppCompatActivity {
                 Intent i = new Intent(Akrotiri_TripScreen.this, AkrotiriScreen.class);
                 startActivity(i);
                 overridePendingTransition(R.transition.slideleft,R.transition.slideright);
+            }
+        });
+
+        flipImg = findViewById(R.id.flipImg);
+        nextImg = findViewById(R.id.nextImg);
+        backImg = findViewById(R.id.backImg);
+
+        nextImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipImg.setInAnimation(Akrotiri_TripScreen.this,R.anim.slide_in_left);
+                flipImg.setOutAnimation(Akrotiri_TripScreen.this,R.anim.slide_out_right);
+                flipImg.showNext();
+            }
+        });
+
+        backImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipImg.setInAnimation(Akrotiri_TripScreen.this,R.anim.slide_in_right);
+                flipImg.setOutAnimation(Akrotiri_TripScreen.this,R.anim.slide_out_left);
+                flipImg.showPrevious();
             }
         });
     }

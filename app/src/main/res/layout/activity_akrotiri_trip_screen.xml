@@ -7,20 +7,6 @@
     android:background="@drawable/phone4"
     tools:context=".Akrotiri_TripScreen">
 
-    <TextView
-        android:id="@+id/tripDetails"
-        android:layout_width="315dp"
-        android:layout_height="279dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="48dp"
-        android:alpha="0.9"
-        android:background="@color/white"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/menu_btn2"
         android:layout_width="wrap_content"
@@ -45,7 +31,7 @@
         app:srcCompat="@drawable/leftarrowblue" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/bookingLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -55,7 +41,7 @@
         app:srcCompat="@drawable/bookinglogo" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/detailsLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
@@ -64,17 +50,145 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/detailslogo" />
 
-    <Button
-        android:id="@+id/detailsBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="133dp"
-        android:layout_marginTop="452dp"
-        android:layout_marginEnd="133dp"
-        android:backgroundTint="#25CF2C"
-        android:text="SHOW DETAILS"
-        android:textColor="@color/white"
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="50dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tripDetails"
+            android:layout_width="315dp"
+            android:layout_height="185dp"
+            android:alpha="0.9"
+            android:background="@color/white"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/detailsBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="190dp"
+            android:backgroundTint="#25CF2C"
+            android:text="SHOW DETAILS"
+            android:textColor="@color/white" />
+    </androidx.cardview.widget.CardView>
+
+    <ViewFlipper
+        android:id="@+id/flipImg"
+        android:layout_width="280dp"
+        android:layout_height="190dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="130dp"
+        android:background="#051C2E"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/flip1" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/flip2" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/flip3" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/flip4" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/flip5" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/flip6" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/flip7" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/flip8" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/flip9" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/flip10" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/flip11" />
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/flip12" />
+    </ViewFlipper>
+
+
+    <ImageView
+        android:id="@+id/nextImg"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="176dp"
+        android:alpha="0.7"
+        android:background="#2196F3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/flipImg"
+        app:srcCompat="@drawable/nextpic" />
+
+    <ImageView
+        android:id="@+id/backImg"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginBottom="176dp"
+        android:alpha="0.7"
+        android:background="#2196F3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/flipImg"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:srcCompat="@drawable/backimg" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
