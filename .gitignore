@@ -1,3 +1,7 @@
+# Ignore mp4 and zip files
+*.mp4
+*.zip
+
 # Built application files
 *.apk
 *.aar
