@@ -141,11 +141,6 @@ public class MenuScreen extends AppCompatActivity {
             startActivity(i);
             return true;
         }
-        if (id == R.id.adventureMenu) {
-            Intent i = new Intent(MenuScreen.this, AdventureScreen.class);
-            startActivity(i);
-            return true;
-        }
         if (id == R.id.todoMenu) {
             Intent i = new Intent(MenuScreen.this, MyToDoScreen.class);
             startActivity(i);
@@ -158,6 +153,26 @@ public class MenuScreen extends AppCompatActivity {
         }
         if (id == R.id.attractionsMenu){
             Intent i = new Intent(MenuScreen.this, AttractionsScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.subMenuVulcano) {
+            Intent i = new Intent(MenuScreen.this, AdventureScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.subMenuFira){
+            Intent i = new Intent(MenuScreen.this, FiraScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.subMenuOia){
+            Intent i = new Intent(MenuScreen.this, OiaScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.subMenuAkrotiri){
+            Intent i = new Intent(MenuScreen.this, AkrotiriScreen.class);
             startActivity(i);
             return true;
         }

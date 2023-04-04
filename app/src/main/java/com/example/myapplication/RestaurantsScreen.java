@@ -114,7 +114,7 @@ public class RestaurantsScreen extends AppCompatActivity {
             }
         });
         return true;
-    }}
+    }
 
     // Perform action when menu item selected
     public boolean onOptionsItemSelected(MenuItem item) {

@@ -16,7 +16,27 @@
     <item android:id="@+id/adventureMenu"
         android:title="@string/adventures"
         android:orderInCategory="4"
-        app:showAsAction="never" />
+        app:showAsAction="never">
+
+        <menu>
+            <item
+                android:id="@+id/subMenuVulcano"
+                android:title="Vulcano"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/subMenuFira"
+                android:title="Fira"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/subMenuOia"
+                android:title="Oia"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/subMenuAkrotiri"
+                android:title="Akrotiri"
+                app:showAsAction="never" />
+        </menu>
+    </item>
 
     <item android:id="@+id/tipsMenu"
         android:title="@string/santorinitips"
