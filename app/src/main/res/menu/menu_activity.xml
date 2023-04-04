@@ -4,55 +4,62 @@
     xmlns:andorid="http://schemas.android.com/tools">
 
     <item android:id="@+id/transportMenu"
-        android:title="Transport"
+        android:title="@string/transport"
         android:orderInCategory="4"
         app:showAsAction="never" />
 
     <item android:id="@+id/beachMenu"
-        android:title="Beaches"
+        android:title="@string/beaches"
         android:orderInCategory="4"
         app:showAsAction="never" />
 
     <item android:id="@+id/adventureMenu"
-        android:title="Adventures"
+        android:title="@string/adventures"
         android:orderInCategory="4"
         app:showAsAction="never" />
 
     <item android:id="@+id/tipsMenu"
-        android:title="Santorini Tips"
+        android:title="@string/santorinitips"
         android:orderInCategory="4"
         app:showAsAction="never" />
 
     <item android:id="@+id/restaurantsMenu"
-        android:title="Restaurants"
+        android:title="@string/restaurants"
         android:orderInCategory="4"
         app:showAsAction="never" />
 
     <item android:id="@+id/todoMenu"
-        android:title="TO DO List"
+        android:title="@string/mytodolist"
         android:orderInCategory="4"
         app:showAsAction="never" />
 
     <item android:id="@+id/attractionsMenu"
-        android:title="Attractions"
+        android:title="@string/attractions"
         android:orderInCategory="4"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/currentTimeMenu"
+        android:title="@string/current_time"
+        android:orderInCategory="1"
+        android:visible="true"
+        app:showAsAction="always"/>
 
     <item
         android:id="@+id/mainMenu"
         android:icon="@drawable/mainmenu"
         android:iconTint="#FFFFFF"
-        android:orderInCategory="1"
+        android:orderInCategory="2"
         android:visible="true"
         andorid:icon="@drawable/mainmenu"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/contactMenu"
         android:icon="@drawable/contactus"
-        android:orderInCategory="2"
+        android:orderInCategory="3"
         android:visible="true"
         andorid:icon="@drawable/contactus"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
 
 </menu>

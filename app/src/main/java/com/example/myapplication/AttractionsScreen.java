@@ -76,7 +76,7 @@ public class AttractionsScreen extends AppCompatActivity {
         attractionsList.add("Ancient Cemetary Echidna, Perissa");
         attractionsList.add("Black Beach, Akrotiri"); // Akrotiri, Beach
         attractionsList.add("Archaeological Museum of Thera, Fira"); // Museum, Thera
-        
+
         //Back Button
         backBtn2 = findViewById(R.id.backBtn2);
         backBtn2.setOnClickListener(new View.OnClickListener() {

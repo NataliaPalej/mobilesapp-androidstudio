@@ -84,4 +84,5 @@ Manolas village is the capital, while other settlements include Korfos, Riva, an
     <string name="akrotiri1" translatable="false">Akrotiri</string>
     <string name="museum">Museum</string>
     <string name="kamari" translatable="false">Kamari</string>
+    <string name="current_time">Current Time</string>
 </resources>
