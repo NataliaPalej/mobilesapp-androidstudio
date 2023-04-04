@@ -70,27 +70,7 @@ public class AttractionsScreen extends AppCompatActivity {
             }
         });
 
-        chip_group_filter = findViewById(R.id.chip_group_filter);
-        chip_group_filter.setOnCheckedChangeListener { group, checkedId -> val chip: Chip? = group.findViewById(checkedId)
-            chip?.let {chipView ->
-                    val predicate: (Items) -> Boolean = {item->
-                    item.category == chipView.text
-            }
-                val filter = prepareData().filter(predicate)
-                adapter?.setData(filter)
-            } ?: kotlin.run {
-                adapter?.setData(prepareData())
-            }
-        }
 
-        chip_group_choice = findViewById(R.id.chip_group_choice);
-        chip_group_choice.setOnCheckedChangeListener { group, checkedId ->
-                val chip: Chip? = group.findViewById(checkedId)
-            chip?.let {chipView ->
-                    Toast.makeText(context, chip.text, Toast.LENGTH_SHORT).show()
-            } ?: kotlin.run {
-            }
-        }
 
 
 

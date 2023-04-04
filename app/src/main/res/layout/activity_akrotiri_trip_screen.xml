@@ -75,7 +75,7 @@
             android:layout_marginLeft="80dp"
             android:layout_marginTop="190dp"
             android:backgroundTint="#25CF2C"
-            android:text="SHOW DETAILS"
+            android:text="@string/showdetails"
             android:textColor="@color/white" />
     </androidx.cardview.widget.CardView>
 

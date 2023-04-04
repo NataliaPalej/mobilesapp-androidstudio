@@ -15,7 +15,7 @@
         android:layout_marginTop="600dp"
         android:layout_marginEnd="90dp"
         android:backgroundTint="#2196F3"
-        android:text="Book Fira - Oia Hiking Trip"
+        android:text="@string/bookfiraoia"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -86,7 +86,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#2196F3"
-                android:text="BOOK ME" />
+                android:text="@string/bookme" />
 
             <ImageView
                 android:id="@+id/hotelpersa"
@@ -99,7 +99,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#2196F3"
-                android:text="BOOK ME" />
+                android:text="@string/bookme" />
 
             <ImageView
                 android:id="@+id/hoteloiamare"
@@ -112,7 +112,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#2196F3"
-                android:text="BOOK ME" />
+                android:text="@string/bookme" />
 
             <ImageView
                 android:id="@+id/hotelsecret"
@@ -125,7 +125,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#2196F3"
-                android:text="BOOK ME" />
+                android:text="@string/bookme" />
 
         </LinearLayout>
     </ScrollView>

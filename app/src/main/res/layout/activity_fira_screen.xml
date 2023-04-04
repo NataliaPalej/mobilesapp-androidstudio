@@ -83,7 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#32CA38"
-            android:text="CHECK IN LIST IN THERA (FIRA)"
+            android:text="@string/checkinlist"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="20dp" />
@@ -95,7 +95,7 @@
             android:layout_marginTop="130dp"
             android:layout_weight="1"
             android:checkable="true"
-            android:text="Eat Souvlaki"
+            android:text="@string/eatSuvlaki"
             android:textAlignment="center" />
 
         <com.google.android.material.chip.Chip
@@ -105,7 +105,7 @@
             android:layout_marginTop="80dp"
             android:layout_weight="1"
             android:checkable="true"
-            android:text="Visit 2Bros Pub"
+            android:text="@string/brosPub"
             android:textAlignment="center" />
 
         <com.google.android.material.chip.Chip
@@ -114,7 +114,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:checkable="true"
-            android:text="Visit Old Harbour"
+            android:text="@string/OldHarbour"
             android:textAlignment="center" />
 
         <com.google.android.material.chip.Chip
@@ -124,7 +124,7 @@
             android:layout_marginLeft="120dp"
             android:layout_marginTop="130dp"
             android:checkable="true"
-            android:text="Do Fira-Oia Hicking"
+            android:text="@string/hike"
             android:textAlignment="center" />
 
         <com.google.android.material.chip.Chip
@@ -135,7 +135,7 @@
             android:layout_marginTop="30dp"
             android:background="#2196F3"
             android:checkable="true"
-            android:text="View Sunset" />
+            android:text="@string/ViewSunset" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip9"
@@ -144,7 +144,7 @@
             android:layout_marginLeft="140dp"
             android:layout_marginTop="80dp"
             android:checkable="true"
-            android:text="Karavolades Stairs" />
+            android:text="@string/stairs" />
 
     </androidx.cardview.widget.CardView>
 

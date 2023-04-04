@@ -37,4 +37,43 @@ The volcanic eruption that occurred at around 1500 BC snapped Santorini off and 
 The island is only 9 sq. km in size and has only 150 permanent inhabitants.
 Manolas village is the capital, while other settlements include Korfos, Riva, and Potamos. A walk through villages can also be a wonderful experience, as in front of the houses lie gardens with colorful blossoms.
     </string>
+
+    <string name="booktrip">Book Trip Here</string>
+    <string name="booktripnow">Book Your Trip Now</string>
+    <string name="booknow">Book Now</string>
+    <string name="showdetails">Show Details</string>
+    <string name="calderabeach">Caldera Beach</string>
+    <string name="redbeach">Red Beach</string>
+    <string name="erosbeach">Eros Beach</string>
+    <string name="whitebeach">White Beach</string>
+    <string name="sendemail">SEND AN EMAIL</string>
+    <string name="bookingdetails">BOOKING DETAILS</string>
+    <string name="sendsms">SEND SMS QUERY</string>
+    <string name="checkinlist">CHECK IN LIST IN THERA (FIRA)</string>
+    <string name="OldHarbour">Visit Old Harbour</string>
+    <string name="ViewSunset">View Sunset</string>
+    <string name="brosPub">Visit 2Bros Pub</string>
+    <string name="stairs">Karavolades Stairs</string>
+    <string name="eatSuvlaki">Eat Souvlaki</string>
+    <string name="hike">Do Fira-Oia Hike</string>
+    <string name="getdirections">GET DIRECTIONS</string>
+    <string name="transport">TRANSPORT</string>
+    <string name="beaches">BEACHES</string>
+    <string name="adventures">ADVENTURES</string>
+    <string name="santorinitips">SANTORINII TIPS</string>
+    <string name="mytodolist">MY TO DO LIST</string>
+    <string name="restaurants">RESTAURANTS</string>
+    <string name="triproutemap">TRIP ROUTE MAP</string>
+    <string name="bookfiraoia">BOOK FIRA - OIA HIKING TRIP</string>
+    <string name="bookme">BOOK ME</string>
+    <string name="callforinfo">CALL FOR MORE INFO</string>
+    <string name="car">CAR</string>
+    <string name="quad">QUAD</string>
+    <string name="scooter">SCOOTER</string>
+    <string name="buggy">BUGGY</string>
+    <string name="todolist">Your TODO list</string>
+    <string name="savelist">SAVE LIST</string>
+    <string name="showtodolist">SHOW MY TODO LIST</string>
+    <string name="takepic">TAKE PIC</string>
+
 </resources>
