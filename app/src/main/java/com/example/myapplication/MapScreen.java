@@ -89,6 +89,11 @@ public class MapScreen extends AppCompatActivity {
             startActivity(i);
             return true;
         }
+        if (id == R.id.attractionsMenu){
+            Intent i = new Intent(MapScreen.this, AttractionsScreen.class);
+            startActivity(i);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }

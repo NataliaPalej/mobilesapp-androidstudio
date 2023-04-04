@@ -169,6 +169,11 @@ public class TransportScreen extends AppCompatActivity {
             startActivity(i);
             return true;
         }
+        if (id == R.id.attractionsMenu){
+            Intent i = new Intent(TransportScreen.this, AttractionsScreen.class);
+            startActivity(i);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }

@@ -109,6 +109,11 @@ public class ContactScreen extends AppCompatActivity {
             startActivity(i);
             return true;
         }
+        if (id == R.id.attractionsMenu){
+            Intent i = new Intent(ContactScreen.this, AttractionsScreen.class);
+            startActivity(i);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }

@@ -141,6 +141,11 @@ public class Akrotiri_TripScreen extends AppCompatActivity {
             startActivity(i);
             return true;
         }
+        if (id == R.id.attractionsMenu){
+            Intent i = new Intent(Akrotiri_TripScreen.this, AttractionsScreen.class);
+            startActivity(i);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }

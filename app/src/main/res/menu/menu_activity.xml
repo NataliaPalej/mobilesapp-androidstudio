@@ -33,6 +33,11 @@
         android:orderInCategory="4"
         app:showAsAction="never" />
 
+    <item android:id="@+id/attractionsMenu"
+        android:title="Attractions"
+        android:orderInCategory="4"
+        app:showAsAction="never" />
+
     <item
         android:id="@+id/mainMenu"
         android:icon="@drawable/mainmenu"

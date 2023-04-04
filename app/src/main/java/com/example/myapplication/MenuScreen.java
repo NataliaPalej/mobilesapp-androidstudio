@@ -11,7 +11,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class MenuScreen extends AppCompatActivity {
-    private Button adventureScreen, beachScreen, mapScreen, transportScreen, tipsScreen, myToDo, restaurantsbtn;
+    private Button adventureScreen, beachScreen, mapScreen, transportScreen, tipsScreen,
+            myToDo, restaurantsbtn, attractionsbtn;
     private ImageView exit;
 
     @Override
@@ -21,86 +22,69 @@ public class MenuScreen extends AppCompatActivity {
 
         // Go to Transport Screen
         transportScreen = findViewById(R.id.btn1);
-        transportScreen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MenuScreen.this, TransportScreen.class);
-                startActivity(i);
-            }
+        transportScreen.setOnClickListener(view -> {
+            Intent i = new Intent(MenuScreen.this, TransportScreen.class);
+            startActivity(i);
         });
 
         // Go to Adventure Screen
         adventureScreen = findViewById(R.id.btn3);
-        adventureScreen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MenuScreen.this, AdventureScreen.class);
-                startActivity(i);
-            }
+        adventureScreen.setOnClickListener(view -> {
+            Intent i = new Intent(MenuScreen.this, AdventureScreen.class);
+            startActivity(i);
         });
 
         // Go to Beach Screen
         beachScreen = findViewById(R.id.btn4);
-        beachScreen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MenuScreen.this, BeachScreen.class);
-                startActivity(i);
-            }
+        beachScreen.setOnClickListener(view -> {
+            Intent i = new Intent(MenuScreen.this, BeachScreen.class);
+            startActivity(i);
         });
 
         // Go to Tips Screen
         tipsScreen = findViewById(R.id.btn6);
-        tipsScreen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MenuScreen.this, TipsScreen.class);
-                startActivity(i);
-            }
+        tipsScreen.setOnClickListener(view -> {
+            Intent i = new Intent(MenuScreen.this, TipsScreen.class);
+            startActivity(i);
         });
 
         // Go to Map Screen
         mapScreen = findViewById(R.id.btn2);
-        mapScreen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MenuScreen.this, MapScreen.class);
-                startActivity(i);
-            }
+        mapScreen.setOnClickListener(view -> {
+            Intent i = new Intent(MenuScreen.this, MapScreen.class);
+            startActivity(i);
         });
 
         // Go to Restaurants Screen
         restaurantsbtn = findViewById(R.id.restaurantsbtn);
-        restaurantsbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MenuScreen.this, RestaurantsScreen.class);
-                startActivity(i);
-            }
+        restaurantsbtn.setOnClickListener(view -> {
+            Intent i = new Intent(MenuScreen.this, RestaurantsScreen.class);
+            startActivity(i);
         });
 
         // Go to My To Do Screen
         myToDo = findViewById(R.id.myToDo);
-        myToDo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MenuScreen.this, MyToDoScreen.class);
-                startActivity(i);
-            }
+        myToDo.setOnClickListener(view -> {
+            Intent i = new Intent(MenuScreen.this, MyToDoScreen.class);
+            startActivity(i);
+        });
+
+        // Go to Attractions Screen
+        attractionsbtn = findViewById(R.id.attractionsbtn);
+        attractionsbtn.setOnClickListener(view -> {
+            Intent i = new Intent(MenuScreen.this, AttractionsScreen.class);
+            startActivity(i);
         });
 
         // Exit the App
         exit = findViewById(R.id.btn5);
-        exit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-                Intent i = new Intent(Intent.ACTION_MAIN);
-                i.addCategory(Intent.CATEGORY_HOME);
-                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(i);
-                System.exit(0);
-            }
+        exit.setOnClickListener(view -> {
+            finish();
+            Intent i = new Intent(Intent.ACTION_MAIN);
+            i.addCategory(Intent.CATEGORY_HOME);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(i);
+            System.exit(0);
         });
     }
 
@@ -150,6 +134,11 @@ public class MenuScreen extends AppCompatActivity {
         }
         if (id == R.id.restaurantsMenu){
             Intent i = new Intent(MenuScreen.this, RestaurantsScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.attractionsMenu){
+            Intent i = new Intent(MenuScreen.this, AttractionsScreen.class);
             startActivity(i);
             return true;
         }
