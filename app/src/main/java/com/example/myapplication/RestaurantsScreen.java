@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,7 +16,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class RestaurantsScreen extends AppCompatActivity {
 
@@ -99,8 +102,19 @@ public class RestaurantsScreen extends AppCompatActivity {
     // Show menu tab on screen
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_activity, menu);
+        MenuItem timeMenuItem = menu.findItem(R.id.currentTimeMenu);
+        final Handler handler = new Handler();
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+                String currentTime = dateFormat.format(new Date());
+                timeMenuItem.setTitle(currentTime);
+                handler.postDelayed(this, 1000);
+            }
+        });
         return true;
-    }
+    }}
 
     // Perform action when menu item selected
     public boolean onOptionsItemSelected(MenuItem item) {

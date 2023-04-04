@@ -4,10 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class TipsScreen extends AppCompatActivity {
 
@@ -32,6 +36,17 @@ public class TipsScreen extends AppCompatActivity {
     // Show menu tab on screen
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_activity, menu);
+        MenuItem timeMenuItem = menu.findItem(R.id.currentTimeMenu);
+        final Handler handler = new Handler();
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+                String currentTime = dateFormat.format(new Date());
+                timeMenuItem.setTitle(currentTime);
+                handler.postDelayed(this, 1000);
+            }
+        });
         return true;
     }
 
