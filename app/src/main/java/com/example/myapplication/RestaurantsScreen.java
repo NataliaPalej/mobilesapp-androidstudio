@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -9,8 +10,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -22,8 +21,7 @@ import java.util.Date;
 
 public class RestaurantsScreen extends AppCompatActivity {
 
-    private ImageView backbtn1, restImg;
-    private TextView restTxt;
+    private ImageView backbtn1;
     private ArrayList<String> restaurantList;
     private ArrayList<Integer> restaurantImg;
 
@@ -36,12 +34,9 @@ public class RestaurantsScreen extends AppCompatActivity {
 
         // Back Button
         backbtn1 = findViewById(R.id.backbtn1);
-        backbtn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(RestaurantsScreen.this, MenuScreen.class);
-                startActivity(i);
-            }
+        backbtn1.setOnClickListener(view -> {
+            Intent i = new Intent(RestaurantsScreen.this, MenuScreen.class);
+            startActivity(i);
         });
 
         // Create List View and Image View
@@ -87,6 +82,7 @@ public class RestaurantsScreen extends AppCompatActivity {
             return 0;
         }
 
+        @SuppressLint("ViewHolder")
         @Override
         public View getView(int i, View view, ViewGroup viewGroup) {
             view = getLayoutInflater().inflate(R.layout.restaurants_list, viewGroup, false);
@@ -107,7 +103,7 @@ public class RestaurantsScreen extends AppCompatActivity {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+                @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
                 String currentTime = dateFormat.format(new Date());
                 timeMenuItem.setTitle(currentTime);
                 handler.postDelayed(this, 1000);
@@ -144,11 +140,6 @@ public class RestaurantsScreen extends AppCompatActivity {
             startActivity(i);
             return true;
         }
-        if (id == R.id.adventureMenu) {
-            Intent i = new Intent(RestaurantsScreen.this, AdventureScreen.class);
-            startActivity(i);
-            return true;
-        }
         if (id == R.id.todoMenu) {
             Intent i = new Intent(RestaurantsScreen.this, MyToDoScreen.class);
             startActivity(i);
@@ -161,6 +152,26 @@ public class RestaurantsScreen extends AppCompatActivity {
         }
         if (id == R.id.attractionsMenu){
             Intent i = new Intent(RestaurantsScreen.this, AttractionsScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.subMenuVulcano) {
+            Intent i = new Intent(RestaurantsScreen.this, AdventureScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.subMenuFira){
+            Intent i = new Intent(RestaurantsScreen.this, FiraScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.subMenuOia){
+            Intent i = new Intent(RestaurantsScreen.this, OiaScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.subMenuAkrotiri){
+            Intent i = new Intent(RestaurantsScreen.this, AkrotiriScreen.class);
             startActivity(i);
             return true;
         }

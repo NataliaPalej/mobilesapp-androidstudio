@@ -75,22 +75,17 @@ public class OiaScreen extends AppCompatActivity {
         });
 
         hotelsecret = findViewById(R.id.hotelsecret_btn);
-        hotelsecret.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Uri uri = Uri.parse("https://tinyurl.com/2dhhexuy");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
-            }
+        hotelsecret.setOnClickListener(view -> {
+            Uri uri = Uri.parse("https://tinyurl.com/2dhhexuy");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
         });
 
         trip = findViewById(R.id.firaoiatrip);
-        trip.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Uri uri = Uri.parse("https://www.viator.com/tours/Santorini/Santorini-Day-trip-with-Bus-tour-and-Boat-tour/d959-116941P64");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
-            }
+        trip.setOnClickListener(view -> {
+            Uri uri = Uri.parse("https://www.viator.com/tours/Santorini/Santorini-Day-trip-with-Bus-tour-and-Boat-tour/d959-116941P64");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
         });
     }
 
@@ -102,7 +97,7 @@ public class OiaScreen extends AppCompatActivity {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+                @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
                 String currentTime = dateFormat.format(new Date());
                 timeMenuItem.setTitle(currentTime);
                 handler.postDelayed(this, 1000);
@@ -139,11 +134,6 @@ public class OiaScreen extends AppCompatActivity {
             startActivity(i);
             return true;
         }
-        if (id == R.id.adventureMenu) {
-            Intent i = new Intent(OiaScreen.this, AdventureScreen.class);
-            startActivity(i);
-            return true;
-        }
         if (id == R.id.todoMenu) {
             Intent i = new Intent(OiaScreen.this, MyToDoScreen.class);
             startActivity(i);
@@ -156,6 +146,26 @@ public class OiaScreen extends AppCompatActivity {
         }
         if (id == R.id.attractionsMenu){
             Intent i = new Intent(OiaScreen.this, AttractionsScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.subMenuVulcano) {
+            Intent i = new Intent(OiaScreen.this, AdventureScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.subMenuFira){
+            Intent i = new Intent(OiaScreen.this, FiraScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.subMenuOia){
+            Intent i = new Intent(OiaScreen.this, OiaScreen.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.subMenuAkrotiri){
+            Intent i = new Intent(OiaScreen.this, AkrotiriScreen.class);
             startActivity(i);
             return true;
         }
