@@ -43,29 +43,40 @@ public class AttractionsScreen extends AppCompatActivity {
         attractionsList.add("Church of Panagia Katefiani, Perissa"); // Perissa
         attractionsList.add("Akrotiri Light House"); // Akrotiri
         attractionsList.add("Ancient Thera, Perissa"); // Perissa
+        attractionsList.add("The Black Beach, Perissa"); // Beach, Perissa
         attractionsList.add("Moni Profiti Ilia, Perissa"); // Perissa
         attractionsList.add("Open Air Cinema Kamari"); // Kamari
+        attractionsList.add("Monastery of Profitis Ilias, Perrisa, Church"); // Church, Perissa
         attractionsList.add("Three Bells of Fira"); // Thera
         attractionsList.add("Museum of Prehistoric Fira"); // Thera
         attractionsList.add("Church of Saint John the Baptist, Fira"); // Thera
         attractionsList.add("Skaros Rock, Fira"); // Thera
         attractionsList.add("Castle of Oia"); // Oia
         attractionsList.add("Ammoudi Bay, Oia"); // Oia
+        attractionsList.add("Venetsanos Winery, Fira, Akrotiri"); // Thera, Akrotiri
         attractionsList.add("Windmill of Oia"); // Oia
-        attractionsList.add("Maritime museum, Oia"); // Oia
+        attractionsList.add("Vlychada Beach, Perissa"); // Beach, Perissa
+        attractionsList.add("Maritime Museum, Oia"); // Oia
         attractionsList.add("Perissa Beach"); // Beach, Perissa
+        attractionsList.add("The Orthodox Metropolitan Church, Fira"); // Church, Thera
         attractionsList.add("Kamari Beach"); // Beach, Kamari
-        attractionsList.add("Cathedral of Panagia Akathistos Hymn, Oia"); // Oia
+        attractionsList.add("Megaron Gyzi Museum, Fira"); // Museum, Thera
+        attractionsList.add("Church of Panagia Akathistos Hymn, Oia"); // Oia
         attractionsList.add("Oia Blue Dome Viewpoint, Oia"); // Oia
         attractionsList.add("The Volcanic Cinder Cone of Kokkino-Vouno Volcano, Oia"); // Oia
         attractionsList.add("The Assumption of the Virgin Mary Holy Church, Oia"); // Oia
         attractionsList.add("Maritime Museum, Oia"); // Oia
+        attractionsList.add("The Church of Panagia Theoskepasti, Oia"); // Church, Oia
+        attractionsList.add("Wine Museum Koutsogiannopoulos, Fira"); // Museum, Thera
+        attractionsList.add("Naval Maritime Museum, Oia"); // Oia, Museum
         attractionsList.add("The Diamond Rock Venue, Fira"); // Thera
         attractionsList.add("Antik Necropolis, Kamari"); // Kamari
+        attractionsList.add("The Church of Aghios Nikolaos, Fira"); // Fira, Church
         attractionsList.add("Spring of Zoodochos Pigi, Kamari"); // Kamari
         attractionsList.add("Ancient Cemetary Echidna, Perissa");
         attractionsList.add("Black Beach, Akrotiri"); // Akrotiri, Beach
-
+        attractionsList.add("Archaeological Museum of Thera, Fira"); // Museum, Thera
+        
         //Back Button
         backBtn2 = findViewById(R.id.backBtn2);
         backBtn2.setOnClickListener(new View.OnClickListener() {
