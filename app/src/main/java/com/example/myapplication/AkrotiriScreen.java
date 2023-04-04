@@ -1,27 +1,25 @@
 package com.example.myapplication;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class AkrotiriScreen extends AppCompatActivity {
-    private ImageView backbtn_4, akrotiri_ruins, akrotiri_lighthouse;
-    private Button mainmenu_btn, booknow;
+    private ImageView akrotiri_ruins;
+    private ImageView akrotiri_lighthouse;
     private EditText editPeople, editEmail, editExtra;
     private SharedPreferences database;
     private int count = 0;
@@ -32,104 +30,86 @@ public class AkrotiriScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_akrotiri_screen);
 
-        backbtn_4 = findViewById(R.id.backbtn_4);
-        backbtn_4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(AkrotiriScreen.this, OiaScreen.class);
-                startActivity(i);
-                overridePendingTransition(R.transition.slideleft,R.transition.slideright);
-            }
+        ImageView backbtn_4 = findViewById(R.id.backbtn_4);
+        backbtn_4.setOnClickListener(view -> {
+            Intent i = new Intent(AkrotiriScreen.this, OiaScreen.class);
+            startActivity(i);
+            overridePendingTransition(R.transition.slideleft,R.transition.slideright);
         });
 
-        mainmenu_btn = findViewById(R.id.mainmenu_btn);
-        mainmenu_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(AkrotiriScreen.this, MenuScreen.class);
-                startActivity(i);
-            }
+        Button mainmenu_btn = findViewById(R.id.mainmenu_btn);
+        mainmenu_btn.setOnClickListener(view -> {
+            Intent i = new Intent(AkrotiriScreen.this, MenuScreen.class);
+            startActivity(i);
         });
 
         calendarView = findViewById(R.id.calendarView);
         editDate = findViewById(R.id.editDate);
 
-        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int day) {
-                // Month starts as zero, hence why we add 1 to it
-                String fullDate = day + "/" + (month+1) + "/" + year;
-                editDate.setText(fullDate);
-            }
+        calendarView.setOnDateChangeListener((view, year, month, day) -> {
+            // Month starts as zero, hence why we add 1 to it
+            String fullDate = day + "/" + (month+1) + "/" + year;
+            editDate.setText(fullDate);
         });
 
-        booknow = findViewById(R.id.booknow);
+        Button booknow = findViewById(R.id.booknow);
         editPeople = findViewById(R.id.editPeople);
         editEmail = findViewById(R.id.editEmail);
         editExtra = findViewById(R.id.editExtra);
 
-        booknow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-                Intent i = new Intent(AkrotiriScreen.this, Akrotiri_TripScreen.class);
-                String date = editDate.getText().toString();
-                String people = editPeople.getText().toString();
-                String email = editEmail.getText().toString();
-                String extra = editExtra.getText().toString();
+        booknow.setOnClickListener(view -> {
+            Intent i = new Intent(AkrotiriScreen.this, Akrotiri_TripScreen.class);
+            String date = editDate.getText().toString();
+            String people = editPeople.getText().toString();
+            String email = editEmail.getText().toString();
+            String extra = editExtra.getText().toString();
 
-                i.putExtra("TextToSend", date);
-                i.putExtra("TextToSend2", people);
-                i.putExtra("TextToSend3", email);
-                i.putExtra("TextToSend4", extra);
+            i.putExtra("TextToSend", date);
+            i.putExtra("TextToSend2", people);
+            i.putExtra("TextToSend3", email);
+            i.putExtra("TextToSend4", extra);
 
-                startActivity(i);
+            startActivity(i);
 
-                startActivity(i);
+            startActivity(i);
 
-                // store the booking
-                database = getApplicationContext().getSharedPreferences("table_store_text", MODE_PRIVATE);
-                SharedPreferences.Editor editor = database.edit();
-                String txt1 = editDate.getText().toString();
-                editor.putString("Date: ", txt1);
-                String txt2 = editPeople.getText().toString();
-                editor.putString("Number of People: ", txt2);
-                String txt3 = editEmail.getText().toString();
-                editor.putString("Email: ", txt3);
-                String txt4 = editExtra.getText().toString();
-                editor.putString("Extra Info: ", txt4);
-                editor.commit();
-                Toast.makeText(AkrotiriScreen.this, "Booking Completed", Toast.LENGTH_SHORT).show();
-            }
+            // store the booking
+            database = getApplicationContext().getSharedPreferences("table_store_text", MODE_PRIVATE);
+            SharedPreferences.Editor editor = database.edit();
+            String txt1 = editDate.getText().toString();
+            editor.putString("Date: ", txt1);
+            String txt2 = editPeople.getText().toString();
+            editor.putString("Number of People: ", txt2);
+            String txt3 = editEmail.getText().toString();
+            editor.putString("Email: ", txt3);
+            String txt4 = editExtra.getText().toString();
+            editor.putString("Extra Info: ", txt4);
+            editor.commit();
+            Toast.makeText(AkrotiriScreen.this, "Booking Completed", Toast.LENGTH_SHORT).show();
         });
 
         // Change car image on click
         akrotiri_ruins = findViewById(R.id.akrotiri_ruins);
-        akrotiri_ruins.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-                count++;
-                if (count==1){
-                    akrotiri_ruins.setImageResource(R.drawable.akrotiri1);
-                }
-                if (count==2){
-                    akrotiri_ruins.setImageResource(R.drawable.akrotiri2);
-                    count=0;
-                }
+        akrotiri_ruins.setOnClickListener(view -> {
+            count++;
+            if (count==1){
+                akrotiri_ruins.setImageResource(R.drawable.akrotiri1);
+            }
+            if (count==2){
+                akrotiri_ruins.setImageResource(R.drawable.akrotiri2);
+                count=0;
             }
         });
 
         akrotiri_lighthouse = findViewById(R.id.akrotiri_lighthouse);
-        akrotiri_lighthouse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-                count++;
-                if(count==1){
-                    akrotiri_lighthouse.setImageResource(R.drawable.akrotiri3);
-                }
-                if (count==2){
-                    akrotiri_lighthouse.setImageResource(R.drawable.akrotiri4);
-                    count = 0;
-                }
+        akrotiri_lighthouse.setOnClickListener(view -> {
+            count++;
+            if(count==1){
+                akrotiri_lighthouse.setImageResource(R.drawable.akrotiri3);
+            }
+            if (count==2){
+                akrotiri_lighthouse.setImageResource(R.drawable.akrotiri4);
+                count = 0;
             }
         });
     }
@@ -142,7 +122,7 @@ public class AkrotiriScreen extends AppCompatActivity {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+                @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
                 String currentTime = dateFormat.format(new Date());
                 timeMenuItem.setTitle(currentTime);
                 handler.postDelayed(this, 1000);

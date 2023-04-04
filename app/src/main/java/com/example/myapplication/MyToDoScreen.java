@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,7 +12,6 @@ import android.os.Handler;
 import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,8 +23,7 @@ import java.util.Date;
 public class MyToDoScreen extends AppCompatActivity {
 
     private static final int REQUEST_IMAGE_CAPTURE = 1;
-    private Button saveDetails, showDetails, cameraBtn;
-    private ImageView backButton, picView;
+    private ImageView picView;
     private TextView todoDetails;
     private SharedPreferences database;
 
@@ -33,51 +32,39 @@ public class MyToDoScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_to_do_screen);
 
-        saveDetails = findViewById(R.id.saveDetails);
-        showDetails = findViewById(R.id.showDetails);
+        Button saveDetails = findViewById(R.id.saveDetails);
+        Button showDetails = findViewById(R.id.showDetails);
         todoDetails = findViewById(R.id.todoDetails);
-        backButton = findViewById(R.id.backButton);
+        ImageView backButton = findViewById(R.id.backButton);
         picView = findViewById(R.id.picView);
-        cameraBtn = findViewById(R.id.cameraBtn);
+        Button cameraBtn = findViewById(R.id.cameraBtn);
 
-        saveDetails.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-                database = getApplicationContext().getSharedPreferences("table_store_text", MODE_PRIVATE);
-                SharedPreferences.Editor editor = database.edit();
-                String todoList = todoDetails.getText().toString();
-                editor.putString("key_saved_text", todoList);
-                editor.commit();
-                Toast.makeText(MyToDoScreen.this, "Data Saved", Toast.LENGTH_SHORT).show();
-            }
+        saveDetails.setOnClickListener(view -> {
+            database = getApplicationContext().getSharedPreferences("table_store_text", MODE_PRIVATE);
+            SharedPreferences.Editor editor = database.edit();
+            String todoList = todoDetails.getText().toString();
+            editor.putString("key_saved_text", todoList);
+            editor.commit();
+            Toast.makeText(MyToDoScreen.this, "Data Saved", Toast.LENGTH_SHORT).show();
         });
 
-        showDetails.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                database = getApplicationContext().getSharedPreferences("table_store_text", MODE_PRIVATE);
-                String todoList = database.getString("key_saved_text", null);
-                Toast.makeText(MyToDoScreen.this, todoList, Toast.LENGTH_SHORT).show();
-            }
+        showDetails.setOnClickListener(view -> {
+            database = getApplicationContext().getSharedPreferences("table_store_text", MODE_PRIVATE);
+            String todoList = database.getString("key_saved_text", null);
+            Toast.makeText(MyToDoScreen.this, todoList, Toast.LENGTH_SHORT).show();
         });
 
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MyToDoScreen.this, MenuScreen.class);
-                startActivity(i);
-            }
+        backButton.setOnClickListener(view -> {
+            Intent i = new Intent(MyToDoScreen.this, MenuScreen.class);
+            startActivity(i);
         });
 
-        cameraBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                try {
-                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-                } catch (ActivityNotFoundException e) {
-                    // display error state to the user
-                }
+        cameraBtn.setOnClickListener(v -> {
+            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            try {
+                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+            } catch (ActivityNotFoundException e) {
+                // display error state to the user
             }
         });
     }
@@ -100,7 +87,7 @@ public class MyToDoScreen extends AppCompatActivity {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+                @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
                 String currentTime = dateFormat.format(new Date());
                 timeMenuItem.setTitle(currentTime);
                 handler.postDelayed(this, 1000);

@@ -21,11 +21,8 @@ import java.util.Date;
 
 public class RestaurantsScreen extends AppCompatActivity {
 
-    private ImageView backbtn1;
     private ArrayList<String> restaurantList;
     private ArrayList<Integer> restaurantImg;
-
-    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,14 +30,14 @@ public class RestaurantsScreen extends AppCompatActivity {
         setContentView(R.layout.activity_restaurants_screen);
 
         // Back Button
-        backbtn1 = findViewById(R.id.backbtn1);
+        ImageView backbtn1 = findViewById(R.id.backbtn1);
         backbtn1.setOnClickListener(view -> {
             Intent i = new Intent(RestaurantsScreen.this, MenuScreen.class);
             startActivity(i);
         });
 
         // Create List View and Image View
-        listView = findViewById(R.id.listView);
+        ListView listView = findViewById(R.id.listView);
 
         restaurantList = new ArrayList<>();
         restaurantList.add("Fanari · €€\nRating: 4.4");

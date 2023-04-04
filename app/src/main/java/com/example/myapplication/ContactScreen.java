@@ -2,13 +2,13 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -16,17 +16,15 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ContactScreen extends AppCompatActivity {
-    private ImageView id_email, id_sms, id_details;
-    private Button menubtn11;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_screen);
 
-        id_email = findViewById(R.id.id_email);
-        id_sms = findViewById(R.id.id_sms);
-        menubtn11 = findViewById(R.id.menubtn11);
+        ImageView id_email = findViewById(R.id.id_email);
+        ImageView id_sms = findViewById(R.id.id_sms);
+        Button menubtn11 = findViewById(R.id.menubtn11);
 
         id_email.setOnClickListener(v -> {
             Intent email = new Intent(Intent.ACTION_SEND);
@@ -45,22 +43,16 @@ public class ContactScreen extends AppCompatActivity {
         });
 
         // Details Screen
-        id_details = findViewById(R.id.id_details);
-        id_details.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(ContactScreen.this, Akrotiri_TripScreen.class);
-                startActivity(i);
-            }
+        ImageView id_details = findViewById(R.id.id_details);
+        id_details.setOnClickListener(view -> {
+            Intent i = new Intent(ContactScreen.this, Akrotiri_TripScreen.class);
+            startActivity(i);
         });
 
         // Menu Button
-        menubtn11.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(ContactScreen.this, MenuScreen.class);
-                startActivity(i);
-            }
+        menubtn11.setOnClickListener(view -> {
+            Intent i = new Intent(ContactScreen.this, MenuScreen.class);
+            startActivity(i);
         });
     }
 
@@ -72,7 +64,7 @@ public class ContactScreen extends AppCompatActivity {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+                @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
                 String currentTime = dateFormat.format(new Date());
                 timeMenuItem.setTitle(currentTime);
                 handler.postDelayed(this, 1000);

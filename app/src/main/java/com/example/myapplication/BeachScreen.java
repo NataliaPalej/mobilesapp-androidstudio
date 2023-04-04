@@ -3,15 +3,13 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.HardwareRenderer;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 
@@ -21,11 +19,7 @@ import java.util.Date;
 public class BeachScreen extends AppCompatActivity {
 
     private ConstraintLayout cons_layout;
-    //Back button
-    private ImageView btn, soundbtn;
-    // Radio buttons for different beaches
-    private RadioButton radio1, radio2, radio3, radio4;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,59 +28,35 @@ public class BeachScreen extends AppCompatActivity {
         cons_layout = findViewById(R.id.cons_layout);
 
         // First Radio Button Caldera Beach
-        radio1 = findViewById(R.id.radio1);
-        radio1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cons_layout.setBackgroundResource(R.drawable.calderabeach);
-            }
-        });
+        // Radio buttons for different beaches
+        RadioButton radio1 = findViewById(R.id.radio1);
+        radio1.setOnClickListener(view -> cons_layout.setBackgroundResource(R.drawable.calderabeach));
 
         // Second Radio Button Eros Beach
-        radio2 = findViewById(R.id.radio2);
-        radio2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cons_layout.setBackgroundResource(R.drawable.erosbeach);
-            }
-        });
+        RadioButton radio2 = findViewById(R.id.radio2);
+        radio2.setOnClickListener(view -> cons_layout.setBackgroundResource(R.drawable.erosbeach));
 
         // Third Radio Button Red Beach
-        radio3 = findViewById(R.id.radio3);
-        radio3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cons_layout.setBackgroundResource(R.drawable.redbeach);
-            }
-        });
+        RadioButton radio3 = findViewById(R.id.radio3);
+        radio3.setOnClickListener(view -> cons_layout.setBackgroundResource(R.drawable.redbeach));
 
         // Forth Radio Button Red Beach
-        radio4 = findViewById(R.id.radio4);
-        radio4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cons_layout.setBackgroundResource(R.drawable.whitebeach);
-            }
-        });
+        RadioButton radio4 = findViewById(R.id.radio4);
+        radio4.setOnClickListener(view -> cons_layout.setBackgroundResource(R.drawable.whitebeach));
 
         // Back Button
-        btn = findViewById(R.id.btn);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(BeachScreen.this, MenuScreen.class);
-                startActivity(i);
-            }
+        //Back button
+        ImageView btn = findViewById(R.id.btn);
+        btn.setOnClickListener(view -> {
+            Intent i = new Intent(BeachScreen.this, MenuScreen.class);
+            startActivity(i);
         });
 
         // Sound Effect
-        soundbtn = findViewById(R.id.soundbtn);
-        soundbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                MediaPlayer mp = MediaPlayer.create(BeachScreen.this, R.raw.seawaves);
-                mp.start();
-            }
+        ImageView soundbtn = findViewById(R.id.soundbtn);
+        soundbtn.setOnClickListener(view -> {
+            MediaPlayer mp = MediaPlayer.create(BeachScreen.this, R.raw.seawaves);
+            mp.start();
         });
     }
 
@@ -98,7 +68,7 @@ public class BeachScreen extends AppCompatActivity {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+                @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
                 String currentTime = dateFormat.format(new Date());
                 timeMenuItem.setTitle(currentTime);
                 handler.postDelayed(this, 1000);

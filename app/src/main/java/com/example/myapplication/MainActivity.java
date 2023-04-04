@@ -12,19 +12,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Go to next screen after 2000ms
-        Thread splashTread = new Thread() {
-            public void run() {
-                try {
-                    sleep(2500);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } finally {
-                    finish();
-                    Intent i = new Intent(MainActivity.this, MenuScreen.class);
-                    startActivity(i);
-                }
+        Thread splashTread = new Thread(() -> {
+            try {
+                Thread.sleep(2500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                finish();
+                Intent i = new Intent(MainActivity.this, MenuScreen.class);
+                startActivity(i);
             }
-        };
+        });
         splashTread.start();
     }
 }

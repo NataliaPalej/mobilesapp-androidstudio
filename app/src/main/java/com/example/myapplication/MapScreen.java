@@ -2,49 +2,39 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Map;
 
 public class MapScreen extends AppCompatActivity {
-
-    private ImageView backbtn5;
-    private Button mapView1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_screen);
 
-        backbtn5 = findViewById(R.id.backbtn5);
-        backbtn5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MapScreen.this, MenuScreen.class);
-                startActivity(i);
-            }
+        ImageView backbtn5 = findViewById(R.id.backbtn5);
+        backbtn5.setOnClickListener(view -> {
+            Intent i = new Intent(MapScreen.this, MenuScreen.class);
+            startActivity(i);
         });
 
         // Go to maps
-        mapView1 = findViewById(R.id.mapView1);
-        mapView1.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                Intent i = new Intent();
-                i.setAction(Intent.ACTION_VIEW);
-                i.setData(Uri.parse("https://tinyurl.com/2r9jj86d"));
-                startActivity(i);
-            }
+        Button mapView1 = findViewById(R.id.mapView1);
+        mapView1.setOnClickListener(view -> {
+            Intent i = new Intent();
+            i.setAction(Intent.ACTION_VIEW);
+            i.setData(Uri.parse("https://tinyurl.com/2r9jj86d"));
+            startActivity(i);
         });
     }
 
@@ -56,7 +46,7 @@ public class MapScreen extends AppCompatActivity {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+                @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
                 String currentTime = dateFormat.format(new Date());
                 timeMenuItem.setTitle(currentTime);
                 handler.postDelayed(this, 1000);

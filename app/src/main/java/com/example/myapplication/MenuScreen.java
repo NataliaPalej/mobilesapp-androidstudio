@@ -2,26 +2,19 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
 
 public class MenuScreen extends AppCompatActivity {
-    private Button adventureScreen, beachScreen, mapScreen, transportScreen, tipsScreen,
-            myToDo, restaurantsbtn, attractionsbtn;
-    private ImageView exit;
-    private TextView currentTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,63 +22,63 @@ public class MenuScreen extends AppCompatActivity {
         setContentView(R.layout.activity_menu_screen);
 
         // Go to Transport Screen
-        transportScreen = findViewById(R.id.btn1);
+        Button transportScreen = findViewById(R.id.btn1);
         transportScreen.setOnClickListener(view -> {
             Intent i = new Intent(MenuScreen.this, TransportScreen.class);
             startActivity(i);
         });
 
         // Go to Adventure Screen
-        adventureScreen = findViewById(R.id.btn3);
+        Button adventureScreen = findViewById(R.id.btn3);
         adventureScreen.setOnClickListener(view -> {
             Intent i = new Intent(MenuScreen.this, AdventureScreen.class);
             startActivity(i);
         });
 
         // Go to Beach Screen
-        beachScreen = findViewById(R.id.btn4);
+        Button beachScreen = findViewById(R.id.btn4);
         beachScreen.setOnClickListener(view -> {
             Intent i = new Intent(MenuScreen.this, BeachScreen.class);
             startActivity(i);
         });
 
         // Go to Tips Screen
-        tipsScreen = findViewById(R.id.btn6);
+        Button tipsScreen = findViewById(R.id.btn6);
         tipsScreen.setOnClickListener(view -> {
             Intent i = new Intent(MenuScreen.this, TipsScreen.class);
             startActivity(i);
         });
 
         // Go to Map Screen
-        mapScreen = findViewById(R.id.btn2);
+        Button mapScreen = findViewById(R.id.btn2);
         mapScreen.setOnClickListener(view -> {
             Intent i = new Intent(MenuScreen.this, MapScreen.class);
             startActivity(i);
         });
 
         // Go to Restaurants Screen
-        restaurantsbtn = findViewById(R.id.restaurantsbtn);
+        Button restaurantsbtn = findViewById(R.id.restaurantsbtn);
         restaurantsbtn.setOnClickListener(view -> {
             Intent i = new Intent(MenuScreen.this, RestaurantsScreen.class);
             startActivity(i);
         });
 
         // Go to My To Do Screen
-        myToDo = findViewById(R.id.myToDo);
+        Button myToDo = findViewById(R.id.myToDo);
         myToDo.setOnClickListener(view -> {
             Intent i = new Intent(MenuScreen.this, MyToDoScreen.class);
             startActivity(i);
         });
 
         // Go to Attractions Screen
-        attractionsbtn = findViewById(R.id.attractionsbtn);
+        Button attractionsbtn = findViewById(R.id.attractionsbtn);
         attractionsbtn.setOnClickListener(view -> {
             Intent i = new Intent(MenuScreen.this, AttractionsScreen.class);
             startActivity(i);
         });
 
         // Exit the App
-        exit = findViewById(R.id.btn5);
+        ImageView exit = findViewById(R.id.btn5);
         exit.setOnClickListener(view -> {
             finish();
             Intent i = new Intent(Intent.ACTION_MAIN);
@@ -104,7 +97,7 @@ public class MenuScreen extends AppCompatActivity {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+                @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
                 String currentTime = dateFormat.format(new Date());
                 timeMenuItem.setTitle(currentTime);
                 handler.postDelayed(this, 1000);

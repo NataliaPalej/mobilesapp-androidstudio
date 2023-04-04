@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,44 +18,32 @@ import java.util.Date;
 
 public class AdventureScreen extends AppCompatActivity {
 
-    private ImageView back, next;
-    private Button bookTrip;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adventure_screen);
 
         // Back Button
-        back = findViewById(R.id.back);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(AdventureScreen.this, MenuScreen.class);
-                startActivity(i);
-                overridePendingTransition(R.transition.slideleft,R.transition.slideright);
-            }
+        ImageView back = findViewById(R.id.back);
+        back.setOnClickListener(view -> {
+            Intent i = new Intent(AdventureScreen.this, MenuScreen.class);
+            startActivity(i);
+            overridePendingTransition(R.transition.slideleft,R.transition.slideright);
         });
 
-        next = findViewById(R.id.next);
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(AdventureScreen.this, FiraScreen.class);
-                startActivity(i);
-                overridePendingTransition(R.transition.slideinright,R.transition.slideinleft);
-            }
+        ImageView next = findViewById(R.id.next);
+        next.setOnClickListener(view -> {
+            Intent i = new Intent(AdventureScreen.this, FiraScreen.class);
+            startActivity(i);
+            overridePendingTransition(R.transition.slideinright,R.transition.slideinleft);
         });
 
         // Open link
-        bookTrip = findViewById(R.id.volcanotrip);
-        bookTrip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Uri uri = Uri.parse("https://www.viator.com/tours/Santorini/Santorini-Volcanic-Islands-Cruise-Volcano-Hot-Springs-and-Thirassia/d959-21977P13");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
-            }
+        Button bookTrip = findViewById(R.id.volcanotrip);
+        bookTrip.setOnClickListener(view -> {
+            Uri uri = Uri.parse("https://www.viator.com/tours/Santorini/Santorini-Volcanic-Islands-Cruise-Volcano-Hot-Springs-and-Thirassia/d959-21977P13");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
         });
     }
 
@@ -66,7 +55,7 @@ public class AdventureScreen extends AppCompatActivity {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+                @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
                 String currentTime = dateFormat.format(new Date());
                 timeMenuItem.setTitle(currentTime);
                 handler.postDelayed(this, 1000);

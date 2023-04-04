@@ -2,12 +2,12 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -23,9 +23,7 @@ import com.google.android.material.chip.ChipGroup;
 public class AttractionsScreen extends AppCompatActivity {
 
     private ChipGroup chip_group_choice;
-    private ListView attractionsViewList;
-    private List<String> attractionsList, filteredAttractionsList;
-    private ImageView backBtn2;
+    private List<String> attractionsList;
     private ArrayAdapter<String> attractionsAdapter;
 
     @Override
@@ -34,7 +32,7 @@ public class AttractionsScreen extends AppCompatActivity {
         setContentView(R.layout.activity_attractions_screen);
 
         // Attractions List
-        attractionsViewList = findViewById(R.id.attractionsViewList);
+        ListView attractionsViewList = findViewById(R.id.attractionsViewList);
 
         // Initialize the list of attractions
         attractionsList = new ArrayList<>();
@@ -81,13 +79,10 @@ public class AttractionsScreen extends AppCompatActivity {
         attractionsList.add("Archaeological Museum of Thera, Fira"); // Museum, Thera
 
         //Back Button
-        backBtn2 = findViewById(R.id.backBtn2);
-        backBtn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(AttractionsScreen.this, MenuScreen.class);
-                startActivity(i);
-            }
+        ImageView backBtn2 = findViewById(R.id.backBtn2);
+        backBtn2.setOnClickListener(view -> {
+            Intent i = new Intent(AttractionsScreen.this, MenuScreen.class);
+            startActivity(i);
         });
 
         // Get a reference to the ChipGroup and set an OnCheckedChangeListener
@@ -115,7 +110,6 @@ public class AttractionsScreen extends AppCompatActivity {
         } else {
             // Otherwise, create a new filtered list
             List<String> tempAttractionsList = new ArrayList<>(fullAttractionsList);
-            filteredAttractionsList.clear();
 
             for (String attraction : fullAttractionsList) {
                 boolean shouldAddAttraction = true;
@@ -146,7 +140,6 @@ public class AttractionsScreen extends AppCompatActivity {
                 }
             }
         }
-
         // Update the adapter with the new filtered list
         attractionsAdapter.clear();
         attractionsAdapter.addAll(filteredAttractionsList);
@@ -161,7 +154,7 @@ public class AttractionsScreen extends AppCompatActivity {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+                @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
                 String currentTime = dateFormat.format(new Date());
                 timeMenuItem.setTitle(currentTime);
                 handler.postDelayed(this, 1000);

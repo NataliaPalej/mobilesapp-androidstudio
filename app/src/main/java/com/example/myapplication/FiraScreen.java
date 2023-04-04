@@ -2,13 +2,12 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
 
 import java.text.SimpleDateFormat;
@@ -16,31 +15,23 @@ import java.util.Date;
 
 public class FiraScreen extends AppCompatActivity {
 
-    private ImageView previous, next, firaPictures;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fira_screen);
 
-        next = findViewById(R.id.nextbtn);
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(FiraScreen.this, OiaScreen.class);
-                startActivity(i);
-                overridePendingTransition(R.transition.slideinright,R.transition.slideinleft);
-            }
+        ImageView next = findViewById(R.id.nextbtn);
+        next.setOnClickListener(view -> {
+            Intent i = new Intent(FiraScreen.this, OiaScreen.class);
+            startActivity(i);
+            overridePendingTransition(R.transition.slideinright,R.transition.slideinleft);
         });
 
-        previous = findViewById(R.id.backbtn);
-        previous.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(FiraScreen.this, AdventureScreen.class);
-                startActivity(i);
-                overridePendingTransition(R.transition.slideleft,R.transition.slideright);
-            }
+        ImageView previous = findViewById(R.id.backbtn);
+        previous.setOnClickListener(view -> {
+            Intent i = new Intent(FiraScreen.this, AdventureScreen.class);
+            startActivity(i);
+            overridePendingTransition(R.transition.slideleft,R.transition.slideright);
         });
     }
 
@@ -52,7 +43,7 @@ public class FiraScreen extends AppCompatActivity {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+                @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
                 String currentTime = dateFormat.format(new Date());
                 timeMenuItem.setTitle(currentTime);
                 handler.postDelayed(this, 1000);

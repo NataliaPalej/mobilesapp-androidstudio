@@ -2,13 +2,13 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
 
 import java.text.SimpleDateFormat;
@@ -16,7 +16,10 @@ import java.util.Date;
 
 public class TransportScreen extends AppCompatActivity {
 
-    private ImageView buggyImage, scooterImage, carImage, quadImage, backbtn3, imgcall;
+    private ImageView buggyImage;
+    private ImageView scooterImage;
+    private ImageView carImage;
+    private ImageView quadImage;
     private int count = 1;
 
     @Override
@@ -26,101 +29,83 @@ public class TransportScreen extends AppCompatActivity {
 
         // Change buggy image on click
         buggyImage = findViewById(R.id.buggyimage);
-        buggyImage.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View view){
-              count++;
-              if(count==1){
-                  buggyImage.setImageResource(R.drawable.buggy);
-              }
-              if (count==2){
-                  buggyImage.setImageResource(R.drawable.buggy2);
-              }
-              if(count==3){
-                  buggyImage.setImageResource(R.drawable.buggy3);
-                  count = 0;
-              }
-          }
+        buggyImage.setOnClickListener(view -> {
+            count++;
+            if(count==1){
+                buggyImage.setImageResource(R.drawable.buggy);
+            }
+            if (count==2){
+                buggyImage.setImageResource(R.drawable.buggy2);
+            }
+            if(count==3){
+                buggyImage.setImageResource(R.drawable.buggy3);
+                count = 0;
+            }
         });
 
         // Change car image on click
         carImage = findViewById(R.id.carImage);
-        carImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-                count++;
-                if(count==1){
-                    carImage.setImageResource(R.drawable.car);
-                }
-                if (count==2){
-                    carImage.setImageResource(R.drawable.car2);
-                }
-                if(count==3){
-                    carImage.setImageResource(R.drawable.car3);
-                    count = 0;
-                }
+        carImage.setOnClickListener(view -> {
+            count++;
+            if(count==1){
+                carImage.setImageResource(R.drawable.car);
+            }
+            if (count==2){
+                carImage.setImageResource(R.drawable.car2);
+            }
+            if(count==3){
+                carImage.setImageResource(R.drawable.car3);
+                count = 0;
             }
         });
 
         // Change scooter image on click
         scooterImage = findViewById(R.id.scooterImage);
-        scooterImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-                count++;
-                if(count==1){
-                    scooterImage.setImageResource(R.drawable.scooter);
-                }
-                if (count==2){
-                    scooterImage.setImageResource(R.drawable.scooter2);
-                }
-                if(count==3){
-                    scooterImage.setImageResource(R.drawable.scooter3);
-                    count = 0;
-                }
+        scooterImage.setOnClickListener(view -> {
+            count++;
+            if(count==1){
+                scooterImage.setImageResource(R.drawable.scooter);
+            }
+            if (count==2){
+                scooterImage.setImageResource(R.drawable.scooter2);
+            }
+            if(count==3){
+                scooterImage.setImageResource(R.drawable.scooter3);
+                count = 0;
             }
         });
 
         // Change quad image on click
         quadImage = findViewById(R.id.quadImage);
-        quadImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-                count++;
-                if(count==1){
-                    quadImage.setImageResource(R.drawable.quad);
-                }
-                if (count==2){
-                    quadImage.setImageResource(R.drawable.quad2);
-                }
-                if(count==3) {
-                    quadImage.setImageResource(R.drawable.quad3);
-                    count = 0;
-                }
+        quadImage.setOnClickListener(view -> {
+            count++;
+            if(count==1){
+                quadImage.setImageResource(R.drawable.quad);
+            }
+            if (count==2){
+                quadImage.setImageResource(R.drawable.quad2);
+            }
+            if(count==3) {
+                quadImage.setImageResource(R.drawable.quad3);
+                count = 0;
             }
         });
 
         // Back Button
-        backbtn3 = findViewById(R.id.backbtn3);
-        backbtn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(TransportScreen.this, MenuScreen.class);
-                startActivity(i);
-            }
+        ImageView backbtn3 = findViewById(R.id.backbtn3);
+        backbtn3.setOnClickListener(view -> {
+            Intent i = new Intent(TransportScreen.this, MenuScreen.class);
+            startActivity(i);
         });
 
         // Call Img Button
-        imgcall = findViewById(R.id.imgcall);
-        imgcall.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent();
-                i.setAction(Intent.ACTION_DIAL);
-                i.setData(Uri.parse("tel:" + "012 345 6789"));
-                if (i.resolveActivity(getPackageManager()) != null)
-                    startActivity(i);
-            }
+        ImageView imgcall = findViewById(R.id.imgcall);
+        imgcall.setOnClickListener(view -> {
+            Intent i = new Intent();
+            i.setAction(Intent.ACTION_DIAL);
+            i.setData(Uri.parse("tel:" + "012 345 6789"));
+            if (i.resolveActivity(getPackageManager()) != null)
+                startActivity(i);
         });
     }
 
@@ -132,7 +117,7 @@ public class TransportScreen extends AppCompatActivity {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+                @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
                 String currentTime = dateFormat.format(new Date());
                 timeMenuItem.setTitle(currentTime);
                 handler.postDelayed(this, 1000);

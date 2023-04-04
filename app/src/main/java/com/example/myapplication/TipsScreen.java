@@ -2,12 +2,12 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 
 import java.text.SimpleDateFormat;
@@ -15,21 +15,16 @@ import java.util.Date;
 
 public class TipsScreen extends AppCompatActivity {
 
-    private Button menu_btn3;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tips_screen);
 
         // Back Button
-        menu_btn3 = findViewById(R.id.menu_btn3);
-        menu_btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(TipsScreen.this, MenuScreen.class);
-                startActivity(i);
-            }
+        Button menu_btn3 = findViewById(R.id.menu_btn3);
+        menu_btn3.setOnClickListener(view -> {
+            Intent i = new Intent(TipsScreen.this, MenuScreen.class);
+            startActivity(i);
         });
     }
 
@@ -41,7 +36,7 @@ public class TipsScreen extends AppCompatActivity {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+                @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
                 String currentTime = dateFormat.format(new Date());
                 timeMenuItem.setTitle(currentTime);
                 handler.postDelayed(this, 1000);

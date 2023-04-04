@@ -2,13 +2,13 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -20,9 +20,6 @@ import java.util.Date;
 
 public class Akrotiri_TripScreen extends AppCompatActivity {
 
-    private TextView tripDetails;
-    private ImageView back_btn2, nextImg, backImg;
-    private Button menu_btn2, detailsBtn;
     private ViewFlipper flipImg;
     private SharedPreferences database;
 
@@ -31,7 +28,7 @@ public class Akrotiri_TripScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_akrotiri_trip_screen);
 
-        tripDetails = findViewById(R.id.tripDetails);
+        TextView tripDetails = findViewById(R.id.tripDetails);
 
         try{
             Bundle extras = getIntent().getExtras();
@@ -44,7 +41,7 @@ public class Akrotiri_TripScreen extends AppCompatActivity {
 
             tripDetails.setText(bookingDetails);
 
-            detailsBtn = findViewById(R.id.detailsBtn);
+            Button detailsBtn = findViewById(R.id.detailsBtn);
             detailsBtn.setOnClickListener(view -> {
                 database = getApplicationContext().getSharedPreferences("table_store_text", MODE_PRIVATE);
                 //String bookingSaved = database.getString("Booking Successful", null);
@@ -55,44 +52,32 @@ public class Akrotiri_TripScreen extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        menu_btn2 = findViewById(R.id.menu_btn2);
-        menu_btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Akrotiri_TripScreen.this, MenuScreen.class);
-                startActivity(i);
-            }
+        Button menu_btn2 = findViewById(R.id.menu_btn2);
+        menu_btn2.setOnClickListener(view -> {
+            Intent i = new Intent(Akrotiri_TripScreen.this, MenuScreen.class);
+            startActivity(i);
         });
-        back_btn2 = findViewById(R.id.back_btn2);
-        back_btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Akrotiri_TripScreen.this, AkrotiriScreen.class);
-                startActivity(i);
-                overridePendingTransition(R.transition.slideleft,R.transition.slideright);
-            }
+        ImageView back_btn2 = findViewById(R.id.back_btn2);
+        back_btn2.setOnClickListener(view -> {
+            Intent i = new Intent(Akrotiri_TripScreen.this, AkrotiriScreen.class);
+            startActivity(i);
+            overridePendingTransition(R.transition.slideleft,R.transition.slideright);
         });
 
         flipImg = findViewById(R.id.flipImg);
-        nextImg = findViewById(R.id.nextImg);
-        backImg = findViewById(R.id.backImg);
+        ImageView nextImg = findViewById(R.id.nextImg);
+        ImageView backImg = findViewById(R.id.backImg);
 
-        nextImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                flipImg.setInAnimation(Akrotiri_TripScreen.this,R.anim.slide_in_left);
-                flipImg.setOutAnimation(Akrotiri_TripScreen.this,R.anim.slide_out_right);
-                flipImg.showNext();
-            }
+        nextImg.setOnClickListener(v -> {
+            flipImg.setInAnimation(Akrotiri_TripScreen.this,R.anim.slide_in_left);
+            flipImg.setOutAnimation(Akrotiri_TripScreen.this,R.anim.slide_out_right);
+            flipImg.showNext();
         });
 
-        backImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                flipImg.setInAnimation(Akrotiri_TripScreen.this,R.anim.slide_in_right);
-                flipImg.setOutAnimation(Akrotiri_TripScreen.this,R.anim.slide_out_left);
-                flipImg.showPrevious();
-            }
+        backImg.setOnClickListener(v -> {
+            flipImg.setInAnimation(Akrotiri_TripScreen.this,R.anim.slide_in_right);
+            flipImg.setOutAnimation(Akrotiri_TripScreen.this,R.anim.slide_out_left);
+            flipImg.showPrevious();
         });
     }
 
@@ -104,7 +89,7 @@ public class Akrotiri_TripScreen extends AppCompatActivity {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+                @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
                 String currentTime = dateFormat.format(new Date());
                 timeMenuItem.setTitle(currentTime);
                 handler.postDelayed(this, 1000);
